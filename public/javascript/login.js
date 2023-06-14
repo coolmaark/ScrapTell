@@ -12,5 +12,5 @@ loginLink.addEventListener('click' ,()=>{
 // Closing icon work
 
 document.getElementById("icon-close").addEventListener("click", function() {
-    window.open("../index.html", "_self");
+    window.open("/", "_self");
 });

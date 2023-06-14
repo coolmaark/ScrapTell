@@ -9,7 +9,7 @@ const flash = require("express-flash")
 const session = require("express-session")
 const { allowedNodeEnvironmentFlags } = require("process");
 const methodOverride = require("method-override");
-const Images = require("./lib/imagesl");
+// const Images = require("./lib/imagesl");
 const app = express();
 app.use( express.static('public'))
 app.set('view engine', 'ejs');

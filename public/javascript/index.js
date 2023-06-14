@@ -56,7 +56,6 @@ closeCart.addEventListener("click", () => {
 
 
 
-
 function knowLocation() {
     return `
     <div class="location">
