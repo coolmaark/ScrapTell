@@ -1,0 +1,181 @@
+
+.back-img {
+    display: flex;
+    flex-direction:column-reverse;
+}
+
+.back-img {
+    background-image: url("https://www.searchenginejournal.com/wp-content/uploads/2020/01/6-types-of-user-behavior-to-track-on-your-website-the-tools-to-do-it-5e1dc37a28401-760x400.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* width: 100%; */
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+}
+
+.back-img h1 {
+    margin-top: -30%;
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+}
+
+.about-btns {
+    width: 100%;
+}
+
+.about-btns button {
+    margin: 5px;
+    padding: 10px 25px;
+    border-radius: 50px;
+}
+
+.about-btns .get-started-btn {
+    border: 1px solid #4F709C;
+    background: #4F709C;
+    color: #fff;
+}
+
+.about-btns .get-started-btn:hover {
+    border: 1px solid #213555;
+    background: #213555;
+}
+
+.about-btns .sell-btn {
+    border: 2px solid #213555;
+}
+
+.about-btns .sell-btn:hover {
+    background: #213555;
+    color: #fff;
+}
+
+
+.our-story h3 {
+    color: #213555;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    padding-bottom: 10px;
+}
+
+.our-story h2 {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 30px;
+}
+
+ol { 
+    list-style-type: decimal-leading-zero;
+    font: italic 1em georgia; 
+    color: red;
+    font-size: 25px;
+    /* font-family: ; */
+}
+
+
+.our-story-img-quote {
+    display: contents;
+}
+
+.our-story-img-quote img {
+    width: 10%;
+}
+
+.our-story-img-quote p {
+    padding-left: 50px;
+}
+
+.our-story {
+    display: flex;
+}
+
+.our-story-pnt {
+    margin-left: 50px;
+}
+
+
+
+@media (max-width: 991px) {
+    .back-img h1 {
+        margin-top: -80%;
+    }
+    
+}
+
+@media (max-width: 799px) {
+    .back-img h1 {
+        font-size: 35px;
+        margin-top: -90%;
+    }
+    .section-p1 {
+        padding: 20px 40px;
+    }
+}
+
+@media (max-width: 767px) {
+    .back-img h1 {
+        font-size: 30px;
+        margin-top: -100%;
+    }
+    .section-p1 {
+        padding: 40px;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .back-img h1 {
+        font-size: 30px;
+        margin-top: -130%;
+    }
+    .our-story {
+        display: block;
+    }
+
+    .overall-text {
+        margin-bottom: 100px;
+    }
+
+    ol, ul {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 477px) {
+    .back-img {
+        background-position: top 30% right 10%;
+    }
+    .back-img h1 {
+        margin-top: -110%;
+        font-size: 25px;
+    }
+    .about-btns .get-started-btn, .sell-btn {
+        font-size: 10px;
+    }
+    .about-btns button {
+        padding: 10px;
+    }
+
+    .section-p1 {
+        padding: 20px;
+    }
+
+    .our-story {
+        display: block;
+    }
+
+    .overall-text {
+        margin-bottom: 100px;
+    }
+
+    ol, ul {
+        padding-left: 0;
+    }
+
+}
