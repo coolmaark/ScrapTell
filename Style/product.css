@@ -1,0 +1,151 @@
+
+
+#prodetails {
+    display: flex;
+    margin-top: 20px;
+}
+
+#prodetails .single-pro-img {
+    width: 40%;
+    margin-right: 50px;
+}
+
+#main-img {
+    margin-bottom: 5px;
+}
+
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+#prodetails .single-pro-details {
+    width: 50%;
+    padding: 30px;
+}
+
+#prodetails .single-pro-details h6 {
+    font-weight: 600;
+}
+
+#prodetails .single-pro-details h4 {
+    padding: 40px 0 20px 0;
+}
+
+#prodetails .single-pro-details h2 {
+    font-size: 26px;
+}
+
+#prodetails .single-pro-details input {
+    width: 12%;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+    border-radius: 12px;
+}
+
+#prodetails .single-pro-details input:focus {
+    outline: none;
+}
+
+#prodetails .single-pro-details button {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px;
+    background: #4F709C;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    width: fit-content;
+    transition: .5s ease;
+}
+
+#prodetails .single-pro-details button:hover {
+    background: #213555;
+}
+
+#prodetails .single-pro-details span {
+    line-height: 25px;
+}
+
+@media(min-width: 576px) {
+    #prodetails .single-pro-details {
+        padding: 0;
+        width: 80%;
+    }
+
+    
+
+    #prodetails .single-pro-details input {
+        width: 20%;
+    }
+
+    #prodetails .single-pro-img {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    #prodetails .single-pro-details h4 {
+        margin-bottom: 0;
+    }
+}
+
+@media(min-width: 1199px) {
+    #prodetails .single-pro-details {
+        margin: auto 0;
+    }
+    #prodetails .single-pro-details h6 {
+        font-size: inherit;
+    }
+    #prodetails .single-pro-details h4 {
+        font-size: 2rem;
+    }
+    #prodetails .single-pro-details span {
+        line-height: 25px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 576px){
+    @media (max-width: 991px) {
+        #prodetails .single-pro-img {
+            margin: auto 0;
+        }
+    }
+    
+}
+
+@media(max-width: 767px) {
+    #prodetails {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #prodetails .single-pro-img {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    #prodetails .single-pro-details {
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    #prodetails .single-pro-details h4 {
+        padding: 10px 0 10px 0;
+    }
+
+    #prodetails .single-pro-details input {
+        width: 30%;
+    }
+
+    .section-p1 {
+        padding: 40px 20px;
+    }
+}

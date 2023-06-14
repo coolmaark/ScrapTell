@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraptel</title>
+
+    <!-- Bootstrap Links -->
+    <link href="https://c...content-available-to-author-only...r.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/login.css">
+
+    <!-- Bootstrap JS Links -->
+    <script src="https://c...content-available-to-author-only...r.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Icons Link -->
+    <link rel="stylesheet" href="https://c...content-available-to-author-only...r.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Font Awesome Link -->
+    <link rel="stylesheet" href="https://u...content-available-to-author-only...e.com/releases/v5.15.4/css/all.css" />
+    <script src="https://k...content-available-to-author-only...e.com/af46e577eb.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <section id="header">
+        <div class="logo-phone-no">
+            <a href="../index.html"><img src="/images/logo.png" class="scraptel-logo" alt="logo"></a>
+            <a href="tel:+918142031786">+91 8142031786</a>
+        </div>
+        <div>
+            <ul id="navbar">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/html/about.html">About</a></li>
+                <li><a href="/html/sell.html">Sell</a></li>
+                <li><a class="active" href="/html/login.html">Login</a></li>
+                <li id="lg-bag"><a href="/html/cart.html"><i class="bi bi-bag-fill"></i></a></li>
+                <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="/html/cart.html"><i class="bi bi-bag-fill"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <!-- Login -->
+    <section id="login">
+        <div class="wrapper">
+            <span id="icon-close" class="icon-close">
+                <ion-icon name="close-outline"></ion-icon>
+            </span>
+            <div class="form-box login">
+                <h2>Login</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <input type="text" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="forgot">
+                        <a href="#">Forget password</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="login-register">
+                        <p>Don't have an account?<a href="#" class="register-link"> Register</a></p>
+                    </div>
+                    <div class="goo-face">
+                        <hr class="bar">
+                        <p>Or Register with</p>
+                        <div class="sym">
+                            <span><ion-icon name="logo-facebook" id="facebook"></ion-icon></span>
+                            <span><ion-icon name="logo-google" id="google"></ion-icon></span>
+                            <span><ion-icon name="logo-linkedin" id="linkedin"></ion-icon></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="form-box register">
+                <h2>Register</h2>
+                <form action="#">
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="person-outline"></ion-icon>
+                        </span>
+                        <input type="text" required>
+                        <label>Username</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="mail-outline"></ion-icon>
+                        </span>
+                        <input type="text" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="input-box">
+                        <span class="icon">
+                            <ion-icon name="lock-closed-outline"></ion-icon>
+                        </span>
+                        <input type="password" required>
+                        <label>Password</label>
+                    </div>
+                    <div class="forgot">
+                        <label> <input type="checkbox">Agree to the terms & conditions </label>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                    <div class="login-register">
+                        <p>Already have an account?<a href="#" class="login-link"> Login</a></p>
+                    </div>
+                    <div class="goo-face">
+                        <hr class="bar">
+                        <p>Or Login with</p>
+                        <div class="sym">
+                            <span><ion-icon name="logo-facebook" id="facebook"></ion-icon></span>
+                            <span><ion-icon name="logo-google" id="google"></ion-icon></span>
+                            <span><ion-icon name="logo-linkedin" id="linkedin"></ion-icon></span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://c...content-available-to-author-only...y.com/jquery-3.7.0.js"></script>
+    <script src="../javascript/index.js"></script>
+    <script src="/javascript/login.js"></script>
+    <script type="module" src="https://u...content-available-to-author-only...g.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://u...content-available-to-author-only...g.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

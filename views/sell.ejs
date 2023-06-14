@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scraptel</title>
+
+    <!-- Bootstrap Links -->
+    <link href="https://c...content-available-to-author-only...r.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- CSS Links -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/sell.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+
+    <!-- Bootstrap JS Links -->
+    <script src="https://c...content-available-to-author-only...r.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Icons Link -->
+    <link rel="stylesheet" href="https://c...content-available-to-author-only...r.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Font Awesome Link -->
+    <script src="https://k...content-available-to-author-only...e.com/721b3d6eaf.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <!-- Navbar -->
+    <section id="header">
+        <div class="logo-phone-no">
+            <a href="../index.html"><img src="/images/logo.png" class="scraptel-logo" alt="logo"></a>
+            <a href="tel:+918142031786">+91 8142031786</a>
+        </div>
+        <div>
+            <ul id="navbar">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="/html/about.html">About</a></li>
+                <li><a class="active" href="/html/sell.html">Sell</a></li>
+                <li><a href="/html/login.html">Login</a></li>
+                <li id="lg-bag"><a href="#"><i class="bi bi-bag-fill" id="cart-icon"></i></a></li>
+                <div class="cart">
+                    <h2 class="cart-title">Your Cart</h2>
+                    <div class="deliver">
+                        <div class="we-deliver">
+                            <div class="we-deliver-radio">
+                                <input type="radio" id="want-transport" name="Transport" value="Yes">
+                                <label for="want-transport">Want Transportation Service</label>
+                            </div>
+                            <div class="hidden-location1">
+                                
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="user-deliver">
+                            <input type="radio" id="no-transport" name="Transport" value="No">
+                            <label for="no-transport">Don't Want Transportation Service</label>
+                        </div>
+                    </div>
+                    <div class="cart-content">
+                        
+                    </div>
+                    
+                    <div class="total">
+                        <div class="total-title">Total</div>
+                        <div class="total-price">Rs.0</div>
+                    </div>
+                    <button type="button" class="btn-buy">Sell Now</button>
+                    <i class="bi bi-x-lg" id="cart-close"></i>
+                </div>
+                <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <a href="#"><i class="bi bi-bag-fill" id="mobile-cart-icon"></i></a>
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+
+    <!-- Cards -->
+    <section id="product" class="section-p1">
+        <h2 class="heading">Sell To Us!</h2>
+        <p>Add the Products into <b>Sell Cart</b> and Know the Estimated Price of it.<br>Click on Card to Read the
+            Item's Description</p>
+        <div class="pro-container">
+            <div class="pro">
+                <img src="../images/sellImg/AC(Air Conditioning)0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">AC(Air Conditioning)</h3>
+                    <h4 class="product-price">Rs. 400</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button class="open-cart" onclick="openCart()">Sell Us</button>
+                
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/fridge0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Fridges</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/wash0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Washing Machines</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/cooler0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Coolers</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/geyser0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Water Geysers</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/microwave0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Microwaves</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/monitor0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Monitors</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/phone0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Phones</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/Oil Cans0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Oil Cans</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/batteries0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Batteries</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/copper0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Copper</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/brass0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Brass</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/aluminium0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Aluminium</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/iron0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Iron</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/motor0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Electric Motors</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/wire0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Wire(Cable)</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/circuit0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Circuit Boards</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/plastic0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Plastic</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/tyre0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Tyres</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/books0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Books</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/Cartoon0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Cartoon</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/news0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Newspaper</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/otherelectronic0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Other Electronics</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+            <div class="pro">
+                <img src="../images/sellImg/AC(Air Conditioning)0.png" alt="" class="product-img">
+                <div class="description">
+                    <h3 class="product-title">Smart Phones</h3>
+                    <h4 class="product-price">Rs. 40</h4>
+                </div>
+                <i class="fa-solid fa-cart-plus basket"></i> <button>Sell Us</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact-us">
+        <h1 class="heading">Any Queries?</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h5>Leave A Message</h5>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Enter Your Name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Example: name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Your Message</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            placeholder="Message"></textarea>
+                    </div>
+                    <button class="btn btn-primary">Send</button>
+                </div>
+                <div class="col-md-5">
+                    <h5>Contact Us</h5>
+                    <div class="mt-5">
+                        <div class="d-flex">
+                            <i class="bi bi-geo-alt-fill"></i>
+                            <p>Honda Showroom lane, Metro pillar no. A972, Erragadda, Hyderabad.</p>
+                        </div>
+                        <hr>
+                        <div class="d-flex">
+                            <i class="bi bi-telephone-fill"></i>
+                            <p>+91 8142031786</p>
+                        </div>
+                        <hr>
+                        <div class="d-flex">
+                            <i class="bi bi-envelope-fill"></i>
+                            <p>info@scraptel.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <div class="row row-cols-sm-1">
+                <div class="col-md-8">
+                    <p class="footer-text">Copyright © 2023 Scraptel. All rights reserved.</p>
+                </div>
+                <div class="col-md-4 footer-icons">
+                    <label for="">Follow Us: </label>
+                    <i class="bi bi-instagram"></i>
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-twitter"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://c...content-available-to-author-only...y.com/jquery-3.7.0.js"></script>
+    <script src="../javascript/index.js"></script>
+    <script src="../javascript/sell.js"></script>
+</body>
+
+</html>
