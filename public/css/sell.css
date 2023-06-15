@@ -4,6 +4,11 @@
     text-align: center;
 }
 
+#product p b {
+    font-family: 'Pacifico';
+    color: #53C0DB;
+}
+
 #product .pro-container {
     display: flex;
     justify-content: space-between;
@@ -14,19 +19,19 @@
 #product .pro {
     width: 23%;
     min-width: 250px;
-    padding: 30px 12px;
-    border: 1px solid #cce7d0;
-    border-radius: 20px;
     cursor: pointer;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.05);
-    margin: 20px 0;
-    background: #F5EFE7;
-    transition: .2s ease;
+    padding: 15px 12px 30px;
+    margin: 0 0 20px;
     position: relative;
+    background-color: #E9F0DC;
 }
 
 #product .pro:hover {
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    border: 1px solid #000;
+    border-radius: 20px;
+    /* margin: 20px 0; */
+    /* background: #F6F6F6; */
 }
 
 #product .pro img {
@@ -34,29 +39,48 @@
     border-radius: 20px;
 }
 
+#product .pro button {
+    padding: 5px;
+    margin-top: 15px;
+    width: 100%;
+    background: #154972;
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+}
+
+
 #product .description h3 {
+    font-family: 'Poltawski Nowy';
     text-align: start;
     font-size: 25px;
     font-weight: 600;
 }
 
 #product .description h4 {
+    font-family: 'Poltawski Nowy';
     text-align: start;
-    color: #4F709C;
+    color: #154972;
     padding-top: 7px;
 }
 
-#product .pro .cart {
+#product .pro .basket {
     width: 40px;
     height: 40px;
     line-height: 40px;
     border-radius: 50px;
-    color: #4F709C;
-    background-color: #fff;
-    border: 1px solid #4F709C;
+    color: #154972;
+    background: #fff;
+    border: 1px solid #53C0DB;
     position: absolute;
     bottom: 25px;
-    right: 5px;
+    right: 20px;
+    top: 310px;
+}
+
+#product .pro .basket:hover {
+    background: #154972;
+    color: #fff;
 }
 
 
