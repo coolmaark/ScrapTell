@@ -69,7 +69,7 @@ body {
     padding: 20px;
     background-color: #E9F0DC;
     box-shadow: 1px solid 4px #000;
-    transition: 1.5s;
+    transition: .5s ease;
 }
 
 .cart.active {
@@ -516,6 +516,16 @@ body {
 }
 
 @media(max-width: 477px) {
+
+    .cart {
+        right: -500px;
+    }
+
+    .cart.active {
+        right: -10px;
+        transition: 0.5s;
+    }
+
     #header {
         padding: 10px 30px;
     }
