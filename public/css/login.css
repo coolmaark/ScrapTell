@@ -64,7 +64,7 @@
     right: 0;
     width: 45px;
     height: 45px;
-    background: #4F709C;
+    background: #154972;
     font-size: 2em; 
     color: #fff;
     display: flex;
@@ -134,7 +134,7 @@
     justify-content: space-between;
 }
 .forgot label input{
-    accent-color: #4F709C;
+    accent-color: #154972;
     margin-right: 3px;
 }
 .forgot a:hover{
@@ -148,7 +148,7 @@
 .btn{
     width: 100%;
     height: 45px;
-    background: #4F709C;
+    background: #154972;
     border: none;
     outline: none;
     border-radius: 6px;

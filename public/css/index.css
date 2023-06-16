@@ -62,7 +62,7 @@ body {
     top: 0;
     /* right: 0; */
     right: -100%;
-    width: 360px;
+    /* width: 360px; */
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
@@ -75,6 +75,19 @@ body {
 .cart.active {
     right: 0;
     transition: 0.5s;
+}
+
+.we-deliver-radio {
+    display: inline-flex;
+}
+
+.we-deliver-radio input {
+    margin-right: 5px;
+    margin-left: -10px;
+}
+
+.user-deliver {
+    display: inline-flex;
 }
 
 .cart-title {
@@ -478,6 +491,9 @@ body {
         font-size: 10px;
     }
 
+
+
+
     #lg-bag {
         display: none;
     }
@@ -522,9 +538,11 @@ body {
     }
 
     .cart.active {
-        right: -10px;
+        right: 0;
         transition: 0.5s;
     }
+
+    
 
     #header {
         padding: 10px 30px;
