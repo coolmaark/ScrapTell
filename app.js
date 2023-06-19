@@ -9,7 +9,7 @@ const flash = require("express-flash")
 const session = require("express-session")
 const { allowedNodeEnvironmentFlags } = require("process");
 const methodOverride = require("method-override");
-const Images = require("./lib/imagesl");
+const Images = require("./models/imagesl");
 const app = express();
 app.use( express.static('public'))
 app.set('view engine', 'ejs');
@@ -24,15 +24,8 @@ function sentenceCase (str) {
   function(txt){return txt.charAt(0).toUpperCase() +
       txt.substr(1).toLowerCase();});
 }
-// const wrapper=document.querySelector('.wrapper');
-// const loginLink=document.querySelector('.login-link');
-// const registerLink=document.querySelector('.register-link');
-// registerLink.addEventListener('click' ,()=>{
-//     wrapper.classList.add('active');
-// });
-// loginLink.addEventListener('click' ,()=>{
-//     wrapper.classList.remove('active');
-// });
+
+
 app.get("/",function(req, res){
     res.render("index");
 });
