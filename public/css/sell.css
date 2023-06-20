@@ -1,3 +1,5 @@
+
+
 #product {
     text-align: center;
     transition: filter 0ms ease-in-out 300ms;
@@ -88,6 +90,8 @@
     left: 50%;
     transform: translate(-50%, -45%);
     width: 90%;
+    height: 80%;
+    overflow: auto;
     padding: 20px;
     background: #fff;
     border-radius: 10px;
@@ -118,9 +122,9 @@
     cursor: pointer;
 }
 
-body.active-popup {
+/* body.active-popup {
     overflow: hidden;
-}
+} */
 
 body.active-popup #product {
     filter: blur(2px);

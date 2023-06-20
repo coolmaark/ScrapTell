@@ -123,17 +123,96 @@ function CartBoxComponent(title, price, imgSrc) {
 
 }
 
+const productElement = document.querySelector(".pro-container");
+function renderProducts() {
+    products.forEach((product) => {
+        productElement.innerHTML += `
+        <div class="pro">
+        <img src="${product.imgSrc}" alt="" class="product-img">
+        <div class="description">
+            <h3 class="product-title">${product.name}</h3>
+        </div>
+        <button class="open-cat">Categories >></button>
+    </div>
+        `
+    })
+}
+renderProducts();
+
+
+// Categories rending
+// const categoryElement = document.querySelector(".category-grp");
+// function renderCategory() {
+//     categories.forEach((category) => {
+//         console.log(category.imgSrc);
+//         categoryElement.innerHTML += `
+//             <div class="col-md-6 col-lg-3 py-3">
+//             <div class="card why-scraptel-card">
+//                 <img src="${category.imgSrc}" class="why-scraptel-icon" alt="...">
+//                 <div class="card-body read-more-container">
+//                     <h4 class="card-title">${category.name}</h4>
+//                     <h3 class="card-price">${category.price}</h3>
+
+//                 </div>
+//             </div>
+
+//             </div>
+//         `
+//     });
+// }   
+// renderCategory();
+
+
+
+
 
 // pop up for categories
-
-
 $(".open-cat").click(function() {
     document.body.classList.add("active-popup");
+    for (let copper of categories.coppers) {
+        const categoryElement = document.querySelector(".category-grp");
+        function renderCategory() {
+                categoryElement.innerHTML += `
+                    <div class="col-md-6 col-lg-3 py-3">
+                    <div class="card why-scraptel-card">
+                        <img src="${copper.imgSrc}" class="why-scraptel-icon" alt="...">
+                        <div class="card-body read-more-container">
+                            <h4 class="card-title">${copper.name}</h4>
+                            <h3 class="card-price">${copper.price}</h3>
+    
+                        </div>
+                    </div>
+    
+                    </div>
+                `
+            }
+            renderCategory();
+    }
+    // console.log(document.body.matches(".active-popup"));
 });
 
 $(".close-btn").click(function() {
-        document.body.classList.remove("active-popup");
+    document.body.classList.remove("active-popup");
+    // console.log(document.body.matches(".active-popup"));
 });
+
+//Closing the pop up when clicked outside of pop up
+window.onclick = (event) => {
+    if(!event.target.matches(".open-cat")) {
+        if(document.body.classList.contains("active-popup")) {
+            document.body.classList.remove("active-popup");
+            }
+    }
+}
+document.body.addEventListener("click", event => event.stopPropagation());
+
+
+
+
+
+
+
+
 
 
 

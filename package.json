@@ -30,6 +30,7 @@
     "express-session": "^1.17.3",
     "lodash": "^4.17.21",
     "method-override": "^3.0.0",
+    "mongoose": "^6.10.0",
     "node": "^20.2.0",
     "nodemon": "^2.0.22",
     "passport": "^0.6.0",

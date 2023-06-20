@@ -1,11 +1,11 @@
 // const Images = require("../models/imagesl");
 const mongoose = require("mongoose");
-mongoose.set('strictQuery', true);
+mongoose.set('strictQuery', false);
 const express = require("express");
 const app = express();
 app.use(express.json());
 // const mongoose = require("mongoose");
-mongoose.set('strictQuery', true);
+mongoose.set('strictQuery', false);
 mongoose.connect("mongodb://127.0.0.1:27017/Categories",function(err){
     if(err){
         console.log("Database Not Connected");
@@ -23,11 +23,11 @@ const Schema= new mongoose.Schema({
 
     ImageURL1 : {
         type : String,
-        unique : true
+        unique : false
     },
     ProductID1 : {
         type : String,
-        unique : true
+        unique : false
     },
     ProductDescription1 : {
         type : String,
@@ -35,11 +35,11 @@ const Schema= new mongoose.Schema({
     },
     ImageURL2 : {
         type : String,
-        unique : true
+        unique : false
     },
     ProductID2 : {
         type : String,
-        unique : true
+        unique : false
     },
     ProductDescription2 : {
         type : String,
@@ -47,11 +47,11 @@ const Schema= new mongoose.Schema({
     },
     ImageURL3 : {
         type : String,
-        unique : true
+        unique : false
     },
     ProductID3 : {
         type : String,
-        unique : true
+        unique : false
     },
     ProductDescription3 : {
         type : String,
@@ -59,11 +59,11 @@ const Schema= new mongoose.Schema({
     },
     ImageURL4 : {
         type : String,
-        unique : true
+        unique : false
     },
     ProductID4 : {
         type : String,
-        unique : true
+        unique : false
     },
     ProductDescription4 : {
         type : String,
