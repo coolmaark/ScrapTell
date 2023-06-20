@@ -1,6 +1,3 @@
-
-
-
 // if (document.readyState == "loading") {
 //     document.addEventListener("DOMContentLoaded", start);
 // } else {
@@ -126,6 +123,21 @@ function CartBoxComponent(title, price, imgSrc) {
 
 }
 
+
+// pop up for categories
+
+
+$(".open-cat").click(function() {
+    document.body.classList.add("active-popup");
+});
+
+$(".close-btn").click(function() {
+        document.body.classList.remove("active-popup");
+});
+
+
+
+
 // Sell Button Clicked
 
 // let noOfCards = document.querySelectorAll(".pro").length;
@@ -159,5 +171,5 @@ function CartBoxComponent(title, price, imgSrc) {
 //         localStorage.setItem("imgUrl", imgUrl);
 //         localStorage.setItem("title", title);
 //         localStorage.setItem("price", price);
-//     });
-// }
+//     });
+// }

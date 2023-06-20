@@ -1,7 +1,6 @@
-
-
 #product {
     text-align: center;
+    transition: filter 0ms ease-in-out 300ms;
 }
 
 #product p b {
@@ -22,7 +21,6 @@
     cursor: pointer;
     padding: 15px 12px 30px;
     margin: 0 0 20px;
-    position: relative;
     background-color: #E9F0DC;
 }
 
@@ -82,6 +80,64 @@
     background: #154972;
     color: #fff;
 }
+
+.popup {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    width: 90%;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px 5px rgba(0, 0, 0, .1);
+    margin-top: -25px;
+    opacity: 0;
+    transition: top 0ms ease-in-out 300ms,
+                opacity 300ms ease-in-out,
+                margin-top 300ms ease-in-out;
+}
+
+.popup > * {
+    margin: 15px 0;
+}
+
+.popup .close-btn {
+    position: absolute;
+    padding: 4px 8px 0 10px;
+    top: -5px;
+    right: 10px;
+    width: 40px;
+    height: 40px;
+    background: #eee;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+body.active-popup {
+    overflow: hidden;
+}
+
+body.active-popup #product {
+    filter: blur(2px);
+    background: rgba(0, 0, 0, 0.08);
+    transition: filter 0ms ease-in-out 0ms;
+}
+
+body.active-popup .popup {
+    top: 50%;
+    opacity: 1;
+    margin-top: 0px;
+    transition: top 0ms ease-in-out 0ms,
+                opacity 300ms ease-in-out,
+                margin-top 300ms ease-in-out;
+}
+
+
 
 
 
