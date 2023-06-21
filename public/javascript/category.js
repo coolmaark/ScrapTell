@@ -4,7 +4,7 @@ const products = [
         id: "Coppers",
         name: "Copper",
         price: 40,
-        imgSrc: "/images/sellImg/copper1.png",
+        imgSrc: "/images/sellImg/copper0.png",
     },
     {
         id: "Brass",
@@ -16,7 +16,7 @@ const products = [
         id: "Aluminium",
         name: "Aluminium",
         price: 90,
-        imgSrc: "/images/sellImg/Aluminium0.png",
+        imgSrc: "/images/sellImg/aluminium0.png",
     },
     {
         id: "Circuit",
@@ -65,25 +65,31 @@ const categories = {
             id: "Copper1",
             name: "Copper abc",
             price: 50,
-            imgSrc: "/images/sellImg/copper1.png",
+            imgSrc: "/images/sellImg/copper0.png",
         },
         {
             id: "Copper2",
             name: "Copper ban",
             price: 80,
-            imgSrc: "/images/sellImg/copper2.png",
+            imgSrc: "/images/sellImg/copper1.png",
         },
         {
             id: "Copper3",
             name: "Copper jar",
             price: 30,
-            imgSrc: "/images/sellImg/copper3.png",
+            imgSrc: "/images/sellImg/copper2.png",
         },
         {
             id: "Copper4",
             name: "Copper car",
             price: 30,
             imgSrc: "/images/sellImg/copper4.png",
+        },
+        {
+            id: "Copper5",
+            name: "Copper car",
+            price: 30,
+            imgSrc: "/images/sellImg/copper3.png",
         }
     ],
     Brass:[

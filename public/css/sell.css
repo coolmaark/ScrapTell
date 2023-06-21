@@ -13,9 +13,10 @@
     padding: 20px 50px;
 }
 
-/* #products .why-scraptel-card h3 {
-    
-} */
+#products .why-scraptel-card {
+    background: #eee;
+}
+
 
 .popup {
     position: fixed;
@@ -27,7 +28,7 @@
     height: 80%;
     overflow: auto;
     padding: 20px;
-    background: #fff;
+    background: #eee;
     border-radius: 10px;
     box-shadow: 0 2px 5px 5px rgba(0, 0, 0, .1);
     margin-top: -25px;
@@ -60,7 +61,7 @@ body.active-popup {
     overflow: hidden;
 }
 
-body.active-popup #product {
+body.active-popup #products {
     filter: blur(2px);
     background: rgba(0, 0, 0, 0.08);
     transition: filter 0ms ease-in-out 0ms;
