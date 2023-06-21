@@ -22,7 +22,7 @@ function update() {
 // Add Events
 function addEvents() {
             let cartRemove_btns = document.querySelectorAll(".cart-remove");
-        console.log(cartRemove_btns);
+        // console.log(cartRemove_btns);
             cartRemove_btns.forEach((btn) => {
                 btn.addEventListener("click", handle_removeCartItem);
             });
@@ -123,77 +123,56 @@ function CartBoxComponent(title, price, imgSrc) {
 
 }
 
-const productElement = document.querySelector(".pro-container");
+
+// adding products to sell page
+const productElement = document.querySelector(".product-row");
 function renderProducts() {
     products.forEach((product) => {
+        const id = product.id;
         productElement.innerHTML += `
-        <div class="pro">
-        <img src="${product.imgSrc}" alt="" class="product-img">
-        <div class="description">
-            <h3 class="product-title">${product.name}</h3>
-        </div>
-        <button class="open-cat">Categories >></button>
-    </div>
+            <div class="col-sm-6 col-md-4 col-lg-3 py-3 px-3">
+                <div class="card why-scraptel-card">
+                    <img src="${product.imgSrc}" alt="" class="product-img">
+                    <div class="description">
+                        <h3 class="product-title">${product.name}</h3>
+                    </div>
+                    <button class="open-cat" onclick="openCategory('${product.id}')">Categories >></button>
+                </div>
+            </div>
         `
-    })
+    });
 }
 renderProducts();
 
 
-// Categories rending
-// const categoryElement = document.querySelector(".category-grp");
-// function renderCategory() {
-//     categories.forEach((category) => {
-//         console.log(category.imgSrc);
-//         categoryElement.innerHTML += `
-//             <div class="col-md-6 col-lg-3 py-3">
-//             <div class="card why-scraptel-card">
-//                 <img src="${category.imgSrc}" class="why-scraptel-icon" alt="...">
-//                 <div class="card-body read-more-container">
-//                     <h4 class="card-title">${category.name}</h4>
-//                     <h3 class="card-price">${category.price}</h3>
-
-//                 </div>
-//             </div>
-
-//             </div>
-//         `
-//     });
-// }   
-// renderCategory();
-
-
-
-
-
-// pop up for categories
-$(".open-cat").click(function() {
+// pop up for categories and rendering
+function openCategory(id) {
     document.body.classList.add("active-popup");
-    for (let copper of categories.coppers) {
-        const categoryElement = document.querySelector(".category-grp");
+    const categoryElement = document.querySelector(".category-row");
+    categoryElement.innerHTML = "";
+    for (let item of categories[id]) {
         function renderCategory() {
                 categoryElement.innerHTML += `
-                    <div class="col-md-6 col-lg-3 py-3">
-                    <div class="card why-scraptel-card">
-                        <img src="${copper.imgSrc}" class="why-scraptel-icon" alt="...">
-                        <div class="card-body read-more-container">
-                            <h4 class="card-title">${copper.name}</h4>
-                            <h3 class="card-price">${copper.price}</h3>
-    
+                    <div class="col-lg-3 col-md-4 col-sm-6 py-3 ">
+                        <div class="card why-scraptel-card">
+                            <img src="${item.imgSrc}" alt="${item.name}">
+                            <div class="card-body">
+                                <h4 >${item.name}</h4>
+                                <h3>${item.price}</h3> 
+                                <button class="add-to-cart">
+                                    <i class="bi bi-cart-plus-fill"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-    
                     </div>
                 `
             }
             renderCategory();
     }
-    // console.log(document.body.matches(".active-popup"));
-});
+}
 
 $(".close-btn").click(function() {
     document.body.classList.remove("active-popup");
-    // console.log(document.body.matches(".active-popup"));
 });
 
 //Closing the pop up when clicked outside of pop up

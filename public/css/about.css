@@ -101,35 +101,19 @@ ol {
 }
 
 
-@media (min-width: 1400px) {
-    .back-img h1 {
-        margin-top: -12%;
-        font-size: 35px;
-    }
-    
-}
 
-@media (max-width: 1399px) {
+@media (max-width: 991px) {
     .back-img h1 {
-        margin-top: -15%;
-        font-size: 35px;
-    }
-    
-}
-
-@media (max-width: 1199px) {
-    .back-img h1 {
-        margin-top: -20%;
-        font-size: 35px;
+        margin-top: -80%;
     }
     
 }
 
 @media (max-width: 799px) {
-    /* .back-img h1 {
-        font-size: 30px;
-        margin-top: -40%;
-    } */
+    .back-img h1 {
+        font-size: 35px;
+        margin-top: -90%;
+    }
     .section-p1 {
         padding: 20px 40px;
     }
@@ -138,7 +122,7 @@ ol {
 @media (max-width: 767px) {
     .back-img h1 {
         font-size: 30px;
-        margin-top: -40%;
+        margin-top: -100%;
     }
     .section-p1 {
         padding: 40px;
@@ -149,7 +133,7 @@ ol {
 @media (max-width: 575px) {
     .back-img h1 {
         font-size: 30px;
-        margin-top: -50%;
+        margin-top: -130%;
     }
     .our-story {
         display: block;
@@ -169,9 +153,8 @@ ol {
         background-position: top 30% right 10%;
     }
     .back-img h1 {
-        margin-top: -70%;
-        font-size: 22px;
-        line-height: normal;
+        margin-top: -110%;
+        font-size: 25px;
     }
     .about-btns .get-started-btn, .sell-btn {
         font-size: 10px;

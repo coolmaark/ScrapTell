@@ -1,87 +1,21 @@
 
 
-#product {
+#products p {
     text-align: center;
-    transition: filter 0ms ease-in-out 300ms;
 }
 
-#product p b {
-    font-family: 'Pacifico';
+#products p b {
+    font-family: 'Spartan', sans-serif;
     color: #53C0DB;
 }
 
-#product .pro-container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px 0;
-    flex-wrap: wrap;
+#products .product-row {
+    padding: 20px 50px;
 }
 
-#product .pro {
-    width: 23%;
-    min-width: 250px;
-    cursor: pointer;
-    padding: 15px 12px 30px;
-    margin: 0 0 20px;
-    background-color: #E9F0DC;
-}
-
-#product .pro:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-    border: 1px solid #000;
-    border-radius: 20px;
-    /* margin: 20px 0; */
-    /* background: #F6F6F6; */
-}
-
-#product .pro img {
-    width: 100%;
-    border-radius: 20px;
-}
-
-#product .pro button {
-    padding: 5px;
-    margin-top: 15px;
-    width: 100%;
-    background: #154972;
-    color: #fff;
-    border-radius: 10px;
-    border: none;
-}
-
-
-#product .description h3 {
-    font-family: 'Poltawski Nowy';
-    text-align: start;
-    font-size: 25px;
-    font-weight: 600;
-}
-
-#product .description h4 {
-    font-family: 'Poltawski Nowy';
-    text-align: start;
-    color: #154972;
-    padding-top: 7px;
-}
-
-#product .pro .basket {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    border-radius: 50px;
-    color: #154972;
-    background: #fff;
-    border: 1px solid #53C0DB;
-    position: absolute;
-    bottom: 25px;
-    right: 20px;
-    top: 310px;
-}
-
-#product .pro .basket:hover {
-    background: #154972;
-    color: #fff;
-}
+/* #products .why-scraptel-card h3 {
+    
+} */
 
 .popup {
     position: fixed;
@@ -122,9 +56,9 @@
     cursor: pointer;
 }
 
-/* body.active-popup {
+body.active-popup {
     overflow: hidden;
-} */
+}
 
 body.active-popup #product {
     filter: blur(2px);
