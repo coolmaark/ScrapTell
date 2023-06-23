@@ -85,12 +85,7 @@ const categories = {
             price: 30,
             imgSrc: "/images/sellImg/copper4.png",
         },
-        {
-            id: "Copper5",
-            name: "Copper car",
-            price: 30,
-            imgSrc: "/images/sellImg/copper3.png",
-        }
+        
     ],
     Brass:[
 

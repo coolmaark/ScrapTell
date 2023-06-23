@@ -136,7 +136,7 @@ function renderProducts() {
                     <div class="description">
                         <h3 class="product-title">${product.name}</h3>
                     </div>
-                    <button class="open-cat" onclick="openCategory('${product.id}')">Categories >></button>
+                    <button class="open-cat" onclick="openCategory('${product.id}')">Categories</button>
                 </div>
             </div>
         `
@@ -154,12 +154,12 @@ function openCategory(id) {
         function renderCategory() {
                 categoryElement.innerHTML += `
                     <div class="col-lg-3 col-md-4 col-sm-6 py-3 ">
-                        <div class="card why-scraptel-card">
+                        <div class="card cat-items">
                             <img src="${item.imgSrc}" alt="${item.name}">
                             <div class="card-body">
                                 <h4 >${item.name}</h4>
                                 <h3>${item.price}</h3> 
-                                <button class="add-to-cart">
+                                <button class="add-to-cart">Sell Us
                                     <i class="bi bi-cart-plus-fill"></i>
                                 </button>
                             </div>
