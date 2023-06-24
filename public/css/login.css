@@ -184,18 +184,15 @@
 }
 .sym {
     display: flex;
-    justify-content: space-between;
-    position: relative;
-    margin-bottom: -20px;
-    font-size: 30px;
-    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 25px;
+
 }
-.sym #facebook:hover{
-    color: #3b5998;
-}
+
+
 .sym #google:hover{
     color: #DB4437;
-}
-.sym #linkedin:hover{
-    color: #0077B5;
+   
 }

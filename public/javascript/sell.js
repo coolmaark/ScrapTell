@@ -130,8 +130,8 @@ function renderProducts() {
     products.forEach((product) => {
         const id = product.id;
         productElement.innerHTML += `
-            <div class="col-sm-6 col-md-4 col-lg-3 py-3 px-3">
-                <div class="card why-scraptel-card">
+            <div class="col-sm-6 col-md-4 col-lg-3 py-3">
+                <div class="card produce">
                     <img src="${product.imgSrc}" alt="" class="product-img">
                     <div class="description">
                         <h3 class="product-title">${product.name}</h3>
@@ -148,6 +148,9 @@ renderProducts();
 // pop up for categories and rendering
 function openCategory(id) {
     document.body.classList.add("active-popup");
+    // document.addEventListener("click",()=>{
+    //     popup.classList.add("active");
+    // });
     const categoryElement = document.querySelector(".category-row");
     categoryElement.innerHTML = "";
     for (let item of categories[id]) {
