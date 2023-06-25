@@ -1,9 +1,10 @@
+
 .cont{
     margin: 0;
     padding: 0;
 }
 #products .produce{
-    background: #E9F0DC;
+    background: rgba(237,251,255,255);
     width:200px;
     height:280px;
 }
@@ -75,7 +76,7 @@
 
 .popup {
     position: fixed;
-    /* z-index: initial; */
+    z-index: -1;
     display: flex;
     top: 0;
     left: 50%;
@@ -98,9 +99,7 @@
     margin: 15px 0;
 
 }
-/* .popup:active{
-    z-index: 1;
-} */
+
 .popup .close-btn {
     position: absolute;
     padding: 4px 8px 0 10px;
@@ -118,6 +117,7 @@
 
 body.active-popup {
     overflow: hidden;
+    
 }
 
 body.active-popup #products {
@@ -133,6 +133,7 @@ body.active-popup .popup {
     transition: top 0ms ease-in-out 0ms,
                 opacity 300ms ease-in-out,
                 margin-top 300ms ease-in-out;
+    z-index: 1;
 }
 
 
