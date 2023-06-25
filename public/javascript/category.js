@@ -3,7 +3,7 @@ const products = [
     {
         id: "Coppers",
         name: "Copper",
-        price: 40,
+        price: 50,
         imgSrc: "/images/sellImg/copper0.png",
     },
     {

@@ -1,7 +1,7 @@
 
 let title = localStorage.getItem('title');
 let price = localStorage.getItem('price');
-// let mainImgId = localStorage.getItem('main-img-id');
+// let mainImgIdg = localStorage.getItem('main-img-id');
 
 document.getElementById("title").innerHTML = title;
 document.getElementById("price").innerHTML = price;
