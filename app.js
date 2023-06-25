@@ -14,6 +14,7 @@ const app = express();
 app.use( express.static('public'))
 app.set('view engine', 'ejs');
 app.use(express.json());
+app.use(bodyParser.json(),bodyParser.urlencoded({ extended: true }));
 //for title case
 function sentenceCase (str) {
   if ((str===null) || (str===''))
@@ -53,32 +54,40 @@ app.get("/Cart",function(req,res){
 app.post("/login",function(req,res){
     let UserEmail = req.body.Email;
     let UserPassword = req.body.Password;
+    bcrypt.hash(UserPassword, process.env.SaltRounds , function(err, hash) {
+        UserPassword = hash;
+    });
     UserDataIDP.find(({Email: UserEmail}),function(err,val){
         if(err){
-            res.redirect("/");
+            console.log(err);
         }
         else{
             if(val.Password == UserPassword ) {
                 res.redirect("/");
             }
             else{
-                res.redirect("/");
+                res.redirect("/Signup");
             }
         }
     });
 });
 
-app.post("/signup",function(req,res){
+app.post("/Signup",function(req,res){
+    // console.log(req.body);
     let UserName = req.body.Username;
     let UserEmail = req.body.Email;
     let UserPassword = req.body.Password;
+    bcrypt.hash(UserPassword, process.env.SaltRounds , function(err, hash) {
+        UserPassword = hash;
+    });
+    // console.log(UserName);
     let NewId = new UserDataIDP({
-        Username : UserName,
+        Username : req.body.Username,
         Email : UserEmail,
         Password : UserPassword
     });
-    const data = NewId.save();
-    // res.render("/");
+    NewId.save();
+    res.redirect("/Login");
 });
 
 
