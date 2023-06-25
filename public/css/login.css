@@ -33,7 +33,7 @@
     /* transform: scale(0); */
     transition: height .2s ease;
 }
-.wrapper.active{
+.wrapper.form-box.register{
     height: 560px;
 }
 
@@ -45,19 +45,13 @@
     transition: tranform .18s ease;
     transform: translateX(0);
 }
-.wrapper.active .form-box.login{
-    transition: none;
-    transform: translateX(-400px);
-}
+
 .wrapper .form-box.register{
     position: absolute;
     transition: none;
-    transform: translateX(400px);
+    transform: translateX(0px);
 }
-.wrapper.active .form-box.register{
-    transition: tranform .18s ease;
-    transform: translateX(0);
-}
+
 .wrapper .icon-close{
     position: absolute;
     top: 0;

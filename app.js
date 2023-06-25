@@ -41,6 +41,9 @@ app.get("/Sell",function(req, res){
 app.get("/Login",function(req, res){
     res.render("login.ejs");
 });
+app.get("/SignUp",function(req,res){
+    res.render("signup.ejs");
+});
 app.get("/Cart",function(req,res){
     res.render("cart.ejs");
 })
