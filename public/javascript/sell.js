@@ -42,6 +42,7 @@ function addEvents() {
 
 // Handle Event Functions
 let itemAdded = [];
+
 function handle_addCartItem() {
     let product = this.parentElement;
     let title = product.querySelector(".product-title").innerHTML;
@@ -91,20 +92,23 @@ function handle_changeItemQuantity() {
 
 // Update & Render
 function updateTotal() {
+    let totalItemsInCartEl = document.querySelector(".total-items-in-cart");
     let cartBoxes = document.querySelectorAll(".cart-box");
     const totalElement = cart.querySelector(".total-price");
-    let total = 0;
+    let total = 0, totalItems = 0;
     cartBoxes.forEach((cartBoxes) => {
         let priceElement = cartBoxes.querySelector(".cart-price");
         let price = parseFloat(priceElement.innerHTML.replace("Rs.", ""));
         let quantity = cartBoxes.querySelector(".cart-quantity").value;
         total += price * quantity;
+        totalItems +=1;
     });
     
     // 2 decimal points
     total = total.toFixed(2);
 
     totalElement.innerHTML = "Rs." + total;
+    totalItemsInCartEl.innerHTML = totalItems;
 }
 
 // HTML Component
