@@ -33,7 +33,7 @@
     /* transform: scale(0); */
     transition: height .2s ease;
 }
-.wrapper.form-box.register{
+.wrapper1.form-box.register{
     height: 560px;
 }
 
@@ -46,7 +46,7 @@
     transform: translateX(0);
 }
 
-.wrapper .form-box.register{
+.wrapper1 .form-box.register{
     position: absolute;
     transition: none;
     transform: translateX(0px);
@@ -189,4 +189,44 @@
 .sym #google:hover{
     color: #DB4437;
    
+}
+.wrapper1{
+    position: relative;
+    width: 400px;
+    height: 550px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,  .5);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, .5);
+    border-radius: 20px;
+    display: flex;
+    line-height: 10px;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* transform: scale(0); */
+    transition: height .2s ease;
+}
+.wrapper1 .icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #154972;
+    font-size: 2em; 
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+.wrapper1 .form-box{
+    width: 100%;
+    padding: 40px;
+}
+.wrapper1 .icon-close:hover {
+    background: #213555;
 }

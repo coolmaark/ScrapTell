@@ -279,6 +279,9 @@ body {
 #close {
     display: none;
 }
+#bar{
+    cursor: pointer;
+}
 
 /* Hero */
 
