@@ -271,6 +271,13 @@ body {
     left: 20px;
 }
 
+.total-items-in-cart {
+    margin-left: -20px;
+    padding: 0px;
+}
+#mobile .total-items-in-cart{
+    margin-left: 0px;
+}
 #mobile {
     display: none;
     align-items: center;
@@ -314,6 +321,22 @@ body {
     padding: 2% 0;
 }
 
+/* Owl Cursosal */
+.row-tel .owl-carousel {
+    width: 100%;
+    z-index: 0;
+}
+.card-tel #plan h3{
+    text-align: center;
+}
+.card-tel #plan button{
+    width: 100%;
+    text-align: center;
+    background-color: #154972;
+    padding: 5px;
+    color: #fff;
+    border-radius: 5px;
+}
 /* Our Story */
 
 .our-story-img-des {
@@ -337,6 +360,15 @@ body {
     margin-bottom: auto;
 }
 
+
+#sell-page{
+    background: #E9F0DC;
+}
+.card-tel{
+    
+    background: rgba(237,251,255,255);
+
+}
 /* Why SCRAPTEL */
 
 #why-scraptel {

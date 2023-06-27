@@ -1,9 +1,9 @@
-// if (document.readyState == "loading") {
+if (document.readyState == "loading") {
     
-//     document.addEventListener("DOMContentLoaded", start);
-// } else {
+    document.addEventListener("DOMContentLoaded", start);
+} else {
     start();
-//  }
+}
 
 
 
@@ -12,12 +12,12 @@ function start() {
     addEvents();
 }
 
+let itemAdded = [];
 
 // Update Function
 function update() {
     addEvents();
     updateTotal();
-    
 }
 
 // Add Events
@@ -41,7 +41,6 @@ function addEvents() {
 
 
 // Handle Event Functions
-let itemAdded = [];
 
 function handle_addCartItem() {
     let product = this.parentElement;
