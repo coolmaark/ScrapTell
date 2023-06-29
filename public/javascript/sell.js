@@ -1,18 +1,29 @@
-if (document.readyState == "loading") {
-    
-    document.addEventListener("DOMContentLoaded", start);
-} else {
-    start();
-}
-
-
+let itemAdded = [];
+start();
 
 // Start Function
 function start() {
     addEvents();
 }
+// Add Events
+function addEvents() {
+    let cartRemove_btns = document.querySelectorAll(".cart-remove");
+    cartRemove_btns.forEach((btn) => {
+        btn.addEventListener("click", handle_removeCartItem);
+    });
+    // Change Quantity of item
+    let cartQuantity_inputs = document.querySelectorAll(".cart-quantity");
+    cartQuantity_inputs.forEach(input => {
+        input.addEventListener("change", handle_changeItemQuantity);
+    });
+    
+    // Adding Items to Cart
+    let addCart_btns = document.querySelectorAll(".basket");
+    addCart_btns.forEach(btn => {
+        btn.addEventListener("click", handle_addCartItem);
+    });
+}
 
-let itemAdded = [];
 
 // Update Function
 function update() {
@@ -20,24 +31,7 @@ function update() {
     updateTotal();
 }
 
-// Add Events
-function addEvents() {
-            let cartRemove_btns = document.querySelectorAll(".cart-remove");
-            cartRemove_btns.forEach((btn) => {
-                btn.addEventListener("click", handle_removeCartItem);
-            });
-            // Change Quantity of item
-            let cartQuantity_inputs = document.querySelectorAll(".cart-quantity");
-            cartQuantity_inputs.forEach(input => {
-                input.addEventListener("change", handle_changeItemQuantity);
-            });
-            
-            // Adding Items to Cart
-            let addCart_btns = document.querySelectorAll(".basket");
-            addCart_btns.forEach(btn => {
-                btn.addEventListener("click", handle_addCartItem);
-            });
-}
+
 
 
 // Handle Event Functions
@@ -46,13 +40,13 @@ function handle_addCartItem() {
     let product = this.parentElement;
     let title = product.querySelector(".product-title").innerHTML;
     let price = product.querySelector(".product-price").innerHTML;
-    // let imgSrc = product.querySelector(".product-img").src;
-    console.log(title,price);
+    let imgSrc = this.parentElement.parentElement.querySelector(".product-img").src;
+    // console.log(title,price);
 
     let newToAdd = {
         title,
         price,
-        // imgSrc,
+        imgSrc,
     };
      
     // Handling item already exist
@@ -64,7 +58,7 @@ function handle_addCartItem() {
     }
 
     // Add Product to Cart
-    let cartBoxElement = CartBoxComponent(title, price);
+    let cartBoxElement = CartBoxComponent(title, price,imgSrc);
     
     let newNode = document.createElement("div");
     newNode.innerHTML = cartBoxElement;
@@ -112,10 +106,10 @@ function updateTotal() {
 
 // HTML Component
 
-function CartBoxComponent(title, price) {
+function CartBoxComponent(title, price,imgSrc) {
     return `
     <div class="cart-box">
-        <img src="/images/sellImg/copper0.png" alt=""  class="cart-img">
+        <img src="${imgSrc}" alt=""  class="cart-img">
         <div class="detail-box">
             <div class="cart-product-title">${title}</div>
             <div class="cart-price">${price}</div>

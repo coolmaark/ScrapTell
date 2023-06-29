@@ -1,27 +1,36 @@
-
-
 .back-img {
-    background-image: url("https://www.searchenginejournal.com/wp-content/uploads/2020/01/6-types-of-user-behavior-to-track-on-your-website-the-tools-to-do-it-5e1dc37a28401-760x400.webp");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    height: 90vh;
-    display: flex;
+    background-image: url('https://www.searchenginejournal.com/wp-content/uploads/2020/01/6-types-of-user-behavior-to-track-on-your-website-the-tools-to-do-it-5e1dc37a28401-760x400.webp');
+    -webkit-background-size:cover;
+    background-repeat:no-repeat ;
+    background-position: center center;
+    
+    height: 100vh;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
-    text-align: center;
+    background-size: cover;
+    
 }
 
-.back-img h1 {
-    margin-top: -30%;
+.text-back {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     text-align: center;
-    width: 100%;
-    font-weight: 700;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    padding: 40px 0;
+    
+    color: #fff;
+    font-weight: bold;
+    z-index: 0;
+    
 }
 
-.about-btns {
-    width: 100%;
+.text-back h1 {
+   padding: 0 8%;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    color: #082f4d;
 }
 
 .about-btns button {
@@ -30,28 +39,26 @@
     border-radius: 50px;
 }
 
-.about-btns .get-started-btn {
+.get-started-btn {
     border: 1px solid #154972;
     background: #154972;
     color: #fff;
     transition: .3s ease;
 }
 
-.about-btns .get-started-btn:hover {
+.get-started-btn:hover {
     border: 1px solid #082f4d;
     background: #082f4d;
 }
 
-.about-btns .sell-btn {
+.sell-btn {
     border: 2px solid #154972;
     transition: .3s ease;
 }
-
-.about-btns .sell-btn:hover {
+.sell-btn:hover {
     background: #154972;
     color: #fff;
 }
-
 /* Our-Story */
 
 .our-story {
@@ -102,17 +109,10 @@ ol {
 
 
 
-@media (max-width: 991px) {
-    .back-img h1 {
-        margin-top: -80%;
-    }
-    
-}
 
 @media (max-width: 799px) {
     .back-img h1 {
         font-size: 35px;
-        margin-top: -90%;
     }
     .section-p1 {
         padding: 20px 40px;
@@ -122,7 +122,6 @@ ol {
 @media (max-width: 767px) {
     .back-img h1 {
         font-size: 30px;
-        margin-top: -100%;
     }
     .section-p1 {
         padding: 40px;
@@ -133,7 +132,6 @@ ol {
 @media (max-width: 575px) {
     .back-img h1 {
         font-size: 30px;
-        margin-top: -130%;
     }
     .our-story {
         display: block;
@@ -153,7 +151,6 @@ ol {
         background-position: top 30% right 10%;
     }
     .back-img h1 {
-        margin-top: -110%;
         font-size: 25px;
     }
     .about-btns .get-started-btn, .sell-btn {
@@ -179,4 +176,4 @@ ol {
         padding-left: 0;
     }
 
-}
+} 

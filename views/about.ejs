@@ -1,4 +1,3 @@
-
 <%- include("partials/header");-%>
 
 <body>
@@ -56,12 +55,15 @@
     <!-- About Us -->
     <section id="about-us">
         <div class="back-img">
-            <h1>We're Changing the Whole Game!</h1>
-            <div class="about-btns">
-                <button class="get-started-btn">Get Started</button>
-                <button class="sell-btn" onclick="window.open('login.html','_self')">Sell to Us</button>
+            <div class="text-back">
+                <h1>We're Changing the Whole Game!</h1>
+                <div class="about-btns">
+                    <button class="get-started-btn" onclick="window.open('/','_self')">Get Started</button>
+                    <button class="sell-btn" onclick="window.open('/Sell','_self')">Sell to Us</button>
+                </div>
             </div>
         </div>
+        <div class="overlay"></div>
         <div class="our-story section-p1">
             <div class="overall-text">
                 <div class="our-story-heading">
@@ -70,6 +72,7 @@
                         molestias
                         adipisci illum.</h2>
                 </div>
+                
                 <div class="our-story-img-quote">
                     <img src="  /images/icons/quote.png" alt="">
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus asperiores quas labore temporibus
