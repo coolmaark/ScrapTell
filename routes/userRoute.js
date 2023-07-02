@@ -1,16 +1,43 @@
 const express = require("express");
-const user_route = express();
+const bcryptjs = require("bcryptjs");
+const mongoose = require("mongoose");
+const User = require("../models/UserData");
+var jwt = require('jsonwebtoken');
+const route = express.Router();
 
-const bodyParser = require("body-parser");
-user_route.use(bodyParser.json(),bodyParser.urlencoded({ extended: true }));
+route.post("/login",async(req,res) =>{
+    const { Email, Password } = req.body;
+    try{
+        let user = User.findOne{(Email)};
+        if(!user){
+            res.send({msg : "User Does Not Exist"});
+            res.redirect("/Signup");
+        }
+        const passwordCompare = bcryptjs.compare(Password,user.password);
+        if(!passwordCompare){
+            res.send({msg : "Wrong Credentials"});
+        }
+        else{
+            res.redirect("/");
+        }
+    }
+});
 
-const multer = require("multer");
-const path = require("path");
+route.post("/Signup",async(req,res) =>{
+    // console.log(req.body);
+    let UserName = req.body.username;
+    let UserEmail = req.body.email;
+    let UserPassword = req.body.password;
+    let hashpass = await bcryptjs.hash(UserPassword,10);
+    console.log(hashpass);
+    let NewId = new User({
+        Username : UserName,
+        Email : UserEmail,
+        Password : hashpass,
+        type : 0
+    });
+    NewId.save();
+    res.redirect("/Login");
+});
 
-user_route.use(express.static("public"));
-
-const user_controller = require("../controllers/userController");
-
-user_route.post("/register",user_controller.register_user);
-
-module.exports = user_route;
+module.exports = route;
