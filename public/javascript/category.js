@@ -172,42 +172,137 @@ const categories = {
 
         {
             id: "wire1",
-            name: "wire abc",
+            name: "Wire abc",
             price: 50,
             imgSrc: "/images/sellImg/wire1.png",
         },
         {
             id: "wire2",
-            name: "wire ban",
+            name: "Wire ban",
             price: 80,
             imgSrc: "/images/sellImg/wire2.png",
         },
         {
             id: "wire3",
-            name: "wire jar",
+            name: "Wire jar",
             price: 30,
             imgSrc: "/images/sellImg/wire3.png",
         },
         {
             id: "wire4",
-            name: "wire car",
+            name: "Wire car",
             price: 30,
             imgSrc: "/images/sellImg/wire4.png",
         },
+    ],
+    Fridges:[
+
         {
-            id: "wire5",
-            name: "wire jar",
-            price: 30,
-            imgSrc: "/images/sellImg/wire3.png",
+            id: "fridges1",
+            name: "Fridges abc",
+            price: 50,
+            imgSrc: "/images/sellImg/fridge0.png",
         },
         {
-            id: "wire6",
-            name: "wire car",
+            id: "fridges2",
+            name: "Fridges ban",
+            price: 80,
+            imgSrc: "/images/sellImg/fridge1.png",
+        },
+        {
+            id: "fridges3",
+            name: "Fridges jar",
             price: 30,
-            imgSrc: "/images/sellImg/wire4.png",
-        }
-    ]
-        
+            imgSrc: "/images/sellImg/fridge0.png",
+        },
+        {
+            id: "fridges4",
+            name: "Fridges car",
+            price: 30,
+            imgSrc: "/images/sellImg/fridge1.png",
+        },
+    ],
+    Batteries:[
+
+        {
+            id: "batteries1",
+            name: "Batteries abc",
+            price: 50,
+            imgSrc: "/images/sellImg/battery1.png",
+        },
+        {
+            id: "batteries2",
+            name: "Batteries ban",
+            price: 80,
+            imgSrc: "/images/sellImg/battery2.png",
+        },
+        {
+            id: "batteries3",
+            name: "Batteries jar",
+            price: 30,
+            imgSrc: "/images/sellImg/battery3.png",
+        },
+        {
+            id: "batteries4",
+            name: "Batteries car",
+            price: 30,
+            imgSrc: "/images/sellImg/battery4.png",
+        },
+    ],
+    Paper:[
+
+        {
+            id: "paper1",
+            name: "Paper abc",
+            price: 50,
+            imgSrc: "/images/sellImg/battery1.png",
+        },
+        {
+            id: "paper2",
+            name: "Paper ban",
+            price: 80,
+            imgSrc: "/images/sellImg/battery2.png",
+        },
+        {
+            id: "paper3",
+            name: "Paper jar",
+            price: 30,
+            imgSrc: "/images/sellImg/battery3.png",
+        },
+        {
+            id: "paper4",
+            name: "Paper car",
+            price: 30,
+            imgSrc: "/images/sellImg/battery4.png",
+        },
+    ],
+    Phones:[
+
+        {
+            id: "phones1",
+            name: "Phones abc",
+            price: 50,
+            imgSrc: "/images/sellImg/battery1.png",
+        },
+        {
+            id: "phones2",
+            name: "Phones ban",
+            price: 80,
+            imgSrc: "/images/sellImg/battery2.png",
+        },
+        {
+            id: "phones3",
+            name: "Phones jar",
+            price: 30,
+            imgSrc: "/images/sellImg/battery3.png",
+        },
+        {
+            id: "phones4",
+            name: "Phones car",
+            price: 30,
+            imgSrc: "/images/sellImg/battery4.png",
+        },
+    ],  
 };
 
 // for (let copper of categories.coppers) {

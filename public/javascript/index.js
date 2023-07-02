@@ -53,8 +53,44 @@ closeCart.addEventListener("click", () => {
     radioId2.addEventListener("click", ()=> {
         delivery.appendChild(newLocation).remove();
     });
-
-
+    const seeproductElement = document.querySelector(".owl-carousel");
+    function seeProducts() {
+        products.forEach((product) => {
+            const id = product.id;
+            seeproductElement.innerHTML += `
+            <div class="item">
+                <div class="card card-tel">
+                    <div class="card-body" id="plan">
+                        <img src="${product.imgSrc}" alt="" height="200px">
+                        <hr>
+                        <h3>${product.name}</h3>
+                        <button onclick="windowOpen()">Categories</button>
+                    </div>
+                </div>
+            </div>
+            `
+        });
+    }
+    seeProducts();
+$('.owl-carousel').owlCarousel({
+    loop:false,
+    margin:20,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:4
+        }
+    }
+})
+function windowOpen(){
+    window.open("/Sell","_self");
+}
 
 function knowLocation() {
     return `
