@@ -3,13 +3,15 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _=require("lodash");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 const passport = require("passport")
 const flash = require("express-flash")
 const session = require("express-session")
 const { allowedNodeEnvironmentFlags } = require("process");
 const methodOverride = require("method-override");
 const UserDataIDP = require("./models/UserData.js");
+const mongoose = require("mongoose");
+mongoose.set('strictQuery', false);
 const app = express();
 app.use( express.static('public'))
 app.set('view engine', 'ejs');
@@ -26,6 +28,15 @@ function sentenceCase (str) {
       txt.substr(1).toLowerCase();});
 }
 
+
+mongoose.connect("mongodb://127.0.0.1:27017/ECOM",function(err){
+    if(err){
+        console.log("Database Not Connected");
+    }
+    else{
+        console.log("Database Connected");
+    }
+});
 
 app.get("/",function(req, res){
     res.render("index");
@@ -47,19 +58,26 @@ app.get("/SignUp",function(req,res){
 });
 
 
+const securepassword = function(password){
+    try{
+        const hashpassword = bcryptjs.hash(password,10);
+        return hashpassword;
+    }
+    catch(err){
+        console.log(err);
+    }
+}
 
 app.post("/login",function(req,res){
     let UserEmail = req.body.Email;
     let UserPassword = req.body.Password;
-    bcrypt.hash(UserPassword, process.env.SaltRounds , function(err, hash) {
-        UserPassword = hash;
-    });
+    let hashedpass = securepassword(UserPassword);
     UserDataIDP.find(({Email: UserEmail}),function(err,val){
         if(err){
             console.log(err);
         }
         else{
-            if(val.Password == UserPassword ) {
+            if(val.Password ==  hashedpass) {
                 res.redirect("/");
             }
             else{
@@ -74,14 +92,13 @@ app.post("/Signup",function(req,res){
     let UserName = req.body.Username;
     let UserEmail = req.body.Email;
     let UserPassword = req.body.Password;
-    bcrypt.hash(UserPassword, process.env.SaltRounds , function(err, hash) {
-        UserPassword = hash;
-    });
+    let hashpass = securepassword(UserPassword);
     // console.log(UserName);
     let NewId = new UserDataIDP({
         Username : req.body.Username,
         Email : UserEmail,
-        Password : UserPassword
+        Password : hashpass,
+        type : 0
     });
     NewId.save();
     res.redirect("/Login");
