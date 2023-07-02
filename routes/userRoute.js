@@ -8,7 +8,7 @@ const route = express.Router();
 route.post("/login",async(req,res) =>{
     const { Email, Password } = req.body;
     try{
-        let user = User.findOne{(Email)};
+        let user = await  User.findOne{(Email)};
         if(!user){
             res.send({msg : "User Does Not Exist"});
             res.redirect("/Signup");
@@ -20,6 +20,9 @@ route.post("/login",async(req,res) =>{
         else{
             res.redirect("/");
         }
+    }
+    catch (err){
+        console.log(err);
     }
 });
 
