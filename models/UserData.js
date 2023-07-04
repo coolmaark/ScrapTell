@@ -1,21 +1,20 @@
 const mongoose = require("mongoose");
 mongoose.set('strictQuery', false);
 const Schema= new mongoose.Schema({
-    Username : {
+    username : {
         type : String,
         required : true
     },
-    Email : {
+    email : {
         type : String,
-        required : true 
+        required : true,
+        unique : true
     },
-    Password : {
+    password : {
         type : String,
         required : true
-    },
-    type : {
-        type : Number
     }
 });
-
-module.exports = mongoose.model("User",Schema);
+const User  = mongoose.model("User",Schema);
+User.createIndexes();   
+module.exports = User;

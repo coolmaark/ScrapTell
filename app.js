@@ -14,7 +14,7 @@ const app = express();
 
 const HomeRoute = require("./routes/HomeRoute.js");
 const UserRoute = require("./routes/userRoute.js");
-
+const Auth = require("./routes/auth.js");
 app.use( express.static('public'))
 app.set('view engine', 'ejs');
 app.use(express.json());
@@ -29,8 +29,11 @@ mongoose.connect(process.env.DBPORT,function(err){
         console.log("Database Connected");
     }
 });
+
 app.use("/",HomeRoute);
 app.use("/User",UserRoute);
+app.use("/api",Auth);
+
 app.listen(process.env.PORT, function() {
   console.log("Server started on http://localhost:"+process.env.PORT);
 });

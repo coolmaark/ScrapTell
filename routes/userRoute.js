@@ -6,22 +6,22 @@ var jwt = require('jsonwebtoken');
 const route = express.Router();
 
 route.post("/login",async(req,res) =>{
-    const { Email, Password } = req.body;
+    console.log(req.body);
+    let { email , password } = req.body;
     try{
-        let user = await  User.findOne{(Email)};
+        let user = await User.findOne({email});
         if(!user){
-            res.send({msg : "User Does Not Exist"});
-            res.redirect("/Signup");
+            return res.status(400).json({error : "User does not exist"});
         }
-        const passwordCompare = bcryptjs.compare(Password,user.password);
-        if(!passwordCompare){
-            res.send({msg : "Wrong Credentials"});
+
+        const check = await bcrypt.compare(password,user.password);
+
+        if(!check){
+            return res.status(400).json({error : "User does not exist"});
         }
-        else{
-            res.redirect("/");
-        }
+        res.redirect("/");
     }
-    catch (err){
+    catch(err){
         console.log(err);
     }
 });
@@ -34,10 +34,9 @@ route.post("/Signup",async(req,res) =>{
     let hashpass = await bcryptjs.hash(UserPassword,10);
     console.log(hashpass);
     let NewId = new User({
-        Username : UserName,
-        Email : UserEmail,
-        Password : hashpass,
-        type : 0
+        username : UserName,
+        email : UserEmail,
+        password : hashpass
     });
     NewId.save();
     res.redirect("/Login");

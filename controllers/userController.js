@@ -27,7 +27,7 @@ const register_user = async(req,res)=>{
         }
         else{
             const user_save = await user.save();
-            res.status(200).send({sucess:true,data:user_save});
+            res.status(200).send({sucess:true, data:user_save});
         }
     }
     catch(err){
