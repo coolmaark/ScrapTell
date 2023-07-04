@@ -5,7 +5,7 @@ const User = require("../models/UserData");
 var jwt = require('jsonwebtoken');
 const route = express.Router();
 
-route.post("/login",async(req,res) =>{
+route.post("/Login",async(req,res) =>{
     console.log(req.body);
     let { email , password } = req.body;
     try{
@@ -14,7 +14,7 @@ route.post("/login",async(req,res) =>{
             return res.status(400).json({error : "User does not exist"});
         }
 
-        const check = await bcrypt.compare(password,user.password);
+        const check = await bcryptjs.compare(password,user.password);
 
         if(!check){
             return res.status(400).json({error : "User does not exist"});

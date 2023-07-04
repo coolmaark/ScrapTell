@@ -1,4 +1,5 @@
 <%- include("partials/header");-%>
+
 <body>
 
     <!-- Navbar -->
@@ -21,41 +22,41 @@
         </div>
     </section>
 
-    <!-- Login -->
+    <!-- signup -->
     <section id="login">
-        <div class="wrapper">
+        <div class="wrapper1">
             <a href="/">
                 <span id="icon-close" class="icon-close">
                     <ion-icon name="close-outline"></ion-icon>
                 </span>
             </a>
-            <div class="form-box login">
+            <div class="form-box register">
                 <h2>Login</h2>
-                <form action="/User/login" method="post">
+                <form action="/User/Login" method="post">
                     <div class="input-box">
                         <span class="icon">
                             <ion-icon name="mail-outline"></ion-icon>
                         </span>
-                        <input type="text" required>
+                        <input type="text" name="email" required>
                         <label>Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon">
                             <ion-icon name="lock-closed-outline"></ion-icon>
                         </span>
-                        <input type="password" required>
+                        <input type="password" name="password" required>
                         <label>Password</label>
                     </div>
                     <div class="forgot">
-                        <a href="#">Forget password</a>
+                        <label> <input type="checkbox">Agree to the terms & conditions </label>
                     </div>
-                    <button type="submit" class="btn">Login</button>
+                    <button type="submit" class="btn">LogIN</button>
                     <div class="login-register">
-                        <p>Don't have an account?<a href="/SignUp" class="register-link"> Register</a></p>
+                        <p>Don't have an account?<a href="/Signup" class="login-link"> Login</a></p>
                     </div>
                     <div class="goo-face">
                         <hr class="bar">
-                        <p>Or Register with</p>
+                        <p>Or Login with</p>
                         <div class="sym">
                             <!-- <div class="tip-tool">Google</div> -->
                             <span><ion-icon name="logo-google" id="google"></ion-icon></span>
