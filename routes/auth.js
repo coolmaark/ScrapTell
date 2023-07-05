@@ -5,7 +5,7 @@ const User = require("../models/UserData");
 var jwt = require('jsonwebtoken');
 const { body , validationResult } = require('express-validator');
 const bcrypt = require("bcryptjs");
-
+const fetchUser = require("../middleware/FetchUser");
 
 
 
@@ -85,5 +85,22 @@ router.post('/Authenticate' , [
         res.status(500).send("Some Error occured");
     }
 })
+
+router.post('/GetUser', fetchUser ,async (req,res)=>{
+    const err = validationResult(req);
+    if(!err.isEmpty()){
+        return res.status(400).json({ errors : err.array() });
+    }
+    try{
+        userid = req.user.id;
+        const user = await User.findById(userid).select("-password");
+        res.send(user);
+    }
+    catch(err){
+        console.log(err.message);
+        res.status(500).send("Some Error occured");
+    }
+})
+
 
 module.exports = router;

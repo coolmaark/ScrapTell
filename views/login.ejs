@@ -32,7 +32,7 @@
             </a>
             <div class="form-box register">
                 <h2>Login</h2>
-                <form action="/User/Login" method="post">
+                <form action="/api/Authenticate" method="post">
                     <div class="input-box">
                         <span class="icon">
                             <ion-icon name="mail-outline"></ion-icon>
@@ -67,7 +67,15 @@
         </div>
     </section>
 
-
+    <script>
+        fetch('http://localhost:3000/api/Authenticate')
+        .then(res=>{
+            console.log(res);
+        })
+        .then(data  => {
+            console.log(data);
+        })
+    </script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="/javascript/index.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
