@@ -33,15 +33,12 @@
             <div class="form-box register">
                 <h2>Login</h2>
                 <form action="/User/Login" method="post">
-                    <% if(Array.isArray(locals.errors)) {%>
+                    <!-- <% if(Array.isArray(locals.errors)) {%> -->
                         <% for(var i = 0 ;i<errors.length ; i++ ) { %>
                         <div class="alert alert-danger" role="alert"><p><%= errors[i].msg %></p></div>
                         <% } %>
-                    <% }%>
-                    <% if(!Array.isArray(locals.errors)) {%>
-                        
-                        <div class="alert alert-danger" role="alert"><p><%= errors %></p></div>
-                    <% }%>
+                    <!-- <% }%> -->
+                    
                     <div class="input-box">
                     <span class="icon">
                             <ion-icon name="mail-outline"></ion-icon>
