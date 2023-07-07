@@ -32,9 +32,18 @@
             </a>
             <div class="form-box register">
                 <h2>Login</h2>
-                <form action="/api/Authenticate" method="post">
+                <form action="/User/Login" method="post">
+                    <% if(Array.isArray(locals.errors)) {%>
+                        <% for(var i = 0 ;i<errors.length ; i++ ) { %>
+                        <div class="alert alert-danger" role="alert"><p><%= errors[i].msg %></p></div>
+                        <% } %>
+                    <% }%>
+                    <% if(!Array.isArray(locals.errors)) {%>
+                        
+                        <div class="alert alert-danger" role="alert"><p><%= errors %></p></div>
+                    <% }%>
                     <div class="input-box">
-                        <span class="icon">
+                    <span class="icon">
                             <ion-icon name="mail-outline"></ion-icon>
                         </span>
                         <input type="text" name="email" required>
@@ -50,9 +59,9 @@
                     <div class="forgot">
                         <label> <input type="checkbox">Agree to the terms & conditions </label>
                     </div>
-                    <button type="submit" class="btn">LogIN</button>
+                    <button type="submit" class="btn">Login</button>
                     <div class="login-register">
-                        <p>Don't have an account?<a href="/Signup" class="login-link"> Login</a></p>
+                        <p>Don't have an account?<a href="/Signup" class="login-link"> Signup</a></p>
                     </div>
                     <div class="goo-face">
                         <hr class="bar">
@@ -70,10 +79,10 @@
     <script>
         fetch('http://localhost:3000/api/Authenticate')
         .then(res=>{
-            console.log(res);
+            return res.json();
         })
         .then(data  => {
-            console.log(data);
+            console.log(data)
         })
     </script>
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
