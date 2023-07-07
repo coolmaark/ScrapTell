@@ -56,9 +56,7 @@ route.post(
   "/Login",
   [
     body("email", "Enter a valid Email").isEmail(),
-    body("password", "Password must be atleast 5 characters").isLength({
-      min: 5,
-    }),
+    body("password", "Password must be atleast 5 characters").isLength({ min: 5 }),
   ],
   async (req, res) => {
     // console.log(req.body);
@@ -70,19 +68,15 @@ route.post(
     const err = validationResult(req);
     if (!err.isEmpty()) {
       console.log(err);
-      return res.render("login", { errors: err.array() });
+      for(var i=0; i<err.length; i++){
+        errors.push(err[i].msg);
+      }
+      return res.render("login", { errors: errors });
     }
     let token = await login(email, password);
     if (!token) {
-      const err = [
-        {
-          value: "ravikurella1gmail.com",
-          msg: "Please Authenticate using a valid user",
-          param: "email",
-          location: "body",
-        },
-      ];
-      res.render("login", { errors: err.array() });
+      errors.push("Please Authenticate using a valid user")
+      return res.render("login", { errors: errors });
     }
     try {
       const data = jwt.verify(token, process.env.JWT_STRING);
@@ -90,13 +84,8 @@ route.post(
       console.log(user);
       const check = bcryptjs.compare(password, user.password);
       if (!check) {
-        const err = {
-          value: "ravikurella1gmail.com",
-          msg: "The Password is incorrect",
-          param: "password",
-          location: "body",
-        };
-        res.render("login", { errors: err.array() });
+        errors.push("The Password is incorrect");
+        return res.render("login", { errors: errors });
       }
 
       res.redirect("/");
