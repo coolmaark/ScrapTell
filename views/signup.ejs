@@ -33,6 +33,9 @@
             <div class="form-box register">
                 <h2>Register</h2>
                 <form action="/User/Signup" method="post">
+                    <% for(var i = 0 ;i<errors.length ; i++ ) { %>
+                    <div class="alert alert-danger" role="alert"><strong><%= errors[i]%></strong></div>
+                    <% } %>
                     <div class="input-box">
                         <span class="icon">
                             <ion-icon name="person-outline"></ion-icon>
@@ -55,7 +58,7 @@
                         <label>Password</label>
                     </div>
                     <div class="forgot">
-                        <label> <input type="checkbox">Agree to the terms & conditions </label>
+                        <label> <input type="checkbox" required>Agree to the terms & conditions </label>
                     </div>
                     <button type="submit" class="btn">Register</button>
                     <div class="login-register">
@@ -66,7 +69,9 @@
                         <p>Or Login with</p>
                         <div class="sym">
                             <!-- <div class="tip-tool">Google</div> -->
-                            <span><ion-icon name="logo-google" id="google"></ion-icon></span>
+                            <span>
+                                <ion-icon name="logo-google" id="google"></ion-icon>
+                            </span>
                         </div>
                     </div>
                 </form>

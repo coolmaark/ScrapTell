@@ -14,10 +14,10 @@ router.get("/Sell",function(req, res){
     res.render("sell.ejs");
 })
 router.get("/Login",function(req, res){
-    res.render("login.ejs");
+    res.render("login" , {errors : []});
 });
 router.get("/SignUp",function(req,res){
-    res.render("signup.ejs");
+    res.render("signup" , {errors : []});
 });
 
 module.exports = router;

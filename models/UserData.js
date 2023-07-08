@@ -14,6 +14,10 @@ const Schema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  Is_Verified : {
+    type: Number,
+    required : true,
+  },
 });
 const User = mongoose.model("User", Schema);
 User.createIndexes();

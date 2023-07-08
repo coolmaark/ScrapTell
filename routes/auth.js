@@ -37,6 +37,7 @@ router.post(
         username: req.body.username,
         email: req.body.email,
         password: hashedpass,
+        Is_Verified : 0,
       });
       const data = {
         user: {
