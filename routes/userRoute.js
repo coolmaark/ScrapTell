@@ -9,6 +9,7 @@ const { body, validationResult } = require("express-validator");
 const route = express.Router();
 
 const axios = require("axios");
+const { error } = require("console");
 
 const errors = [];
 
@@ -26,57 +27,45 @@ const login = async (email, password) => {
       const token = response.data.authtoken;
       return token;
     } else {
+      while (errors.length > 0) {
+        errors.pop();
+      }
       errors.push("Login failed");
     }
   } catch (error) {
+    while (errors.length > 0) {
+      errors.pop();
+    }
     errors.push("Login failed");
   }
 };
-
-const getUser = async (token) => {
-  try {
-    const response = await axios.get("http://localhost:3000/api/GetUser", {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-
-    if (response.status === 200) {
-      const user = response.data.user;
-      return user;
-    } else {
-      errors.push("Failed to retrieve user");
-    }
-  } catch (error) {
-    errors.push("Failed to retrieve user");
-  }
-};
-
 route.post(
   "/Login",
   [
     body("email", "Enter a valid Email").isEmail(),
-    body("password", "Password must be atleast 5 characters").isLength({ min: 5 }),
+    body("password", "Password must be atleast 5 characters").isLength({
+      min: 5,
+    }),
   ],
   async (req, res) => {
-    // console.log(req.body);
     let { email, password } = req.body;
-    // let data1 = await getUser(data);
-    // if(!errors.isEmpty()){
-    //     console.log(errors);
-    // }
     const err = validationResult(req);
     if (!err.isEmpty()) {
-      console.log(err);
-      for(var i=0; i<err.length; i++){
-        errors.push(err[i].msg);
+      while (errors.length > 0) {
+        errors.pop();
+      }
+      let k = err.array();
+      for (var i = 0; i < k.length; i++) {
+        // console.log(k[i].msg);
+        errors.push(k[i].msg);
       }
       return res.render("login", { errors: errors });
     }
     let token = await login(email, password);
     if (!token) {
-      errors.push("Please Authenticate using a valid user")
-      return res.render("login", { errors: errors });
+      return res.render("login", {
+        errors: ["Please Authenticate using a valid user"],
+      });
     }
     try {
       const data = jwt.verify(token, process.env.JWT_STRING);
@@ -84,14 +73,13 @@ route.post(
       console.log(user);
       const check = bcryptjs.compare(password, user.password);
       if (!check) {
-        errors.push("The Password is incorrect");
-        return res.render("login", { errors: errors });
+        return res.render("login", { errors: ["The Password is incorrect"] });
       }
 
       res.redirect("/");
     } catch (err) {
-      console.log(err.message);
-      res.status(500).send("Some Error occured");
+      // console.log(err.message);
+      res.render("login", { errors: ["Some Error occured"] });
     }
   }
 );
@@ -111,18 +99,5 @@ route.post("/Signup", async (req, res) => {
   NewId.save();
   res.redirect("/Login");
 });
-
-// const handleSubmit = async(e)=>{
-//     e.preventionDefault();
-//     const response = await fetch("http://localhost:3000/api/Authenticate",{
-//         method = 'POST',
-//         headers : {
-//             'Content-Type': 'application/json'
-//         },
-//         body: JSON.stringify({email, password})
-//     });
-//     const json = await response.json();
-//     console.log(json);
-// }
 
 module.exports = route;
