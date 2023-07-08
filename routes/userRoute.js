@@ -9,7 +9,7 @@ const { body, validationResult } = require("express-validator");
 const route = express.Router();
 
 const axios = require("axios");
-const { error } = require("console");
+// const { error } = require("console");
 
 const errors = [];
 
@@ -64,21 +64,18 @@ route.post(
     let token = await login(email, password);
     if (!token) {
       return res.render("login", {
-        errors: ["Please Authenticate using a valid user"],
+        errors: ["Please Enter Valid Credentials"],
       });
     }
     try {
       const data = jwt.verify(token, process.env.JWT_STRING);
       const user = await User.findById(data.user.id);
-      console.log(user);
       const check = bcryptjs.compare(password, user.password);
       if (!check) {
         return res.render("login", { errors: ["The Password is incorrect"] });
       }
-
       res.redirect("/");
     } catch (err) {
-      // console.log(err.message);
       res.render("login", { errors: ["Some Error occured"] });
     }
   }
