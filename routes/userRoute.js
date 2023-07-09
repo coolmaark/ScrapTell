@@ -9,6 +9,9 @@ const { body, validationResult } = require("express-validator");
 const nodemailer = require("nodemailer");
 const route = express.Router();
 const axios = require("axios");
+// const session = require("express-session");
+// const passport = require("passport");
+// const passportLocalMongoose = require("passport-local-mongoose");
 // const { error } = require("console");
 require("dotenv").config();
 const errors = [];
@@ -192,12 +195,12 @@ route.post(
     // console.log(token);
     if (!token) {
       return res.render("signup", {
-        errors: ["Enter a valid Email"],
+        errors: ["Email already Exists"],
       });
     }
     const user = await User.findOne({ email: email });
     sendVerifyMail(username, email, user.id);
-    res.redirect("/Login");
+    res.render("login",{errors : ["Please verify the email"]});
   }
 );
 
