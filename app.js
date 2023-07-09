@@ -10,8 +10,13 @@ const UserDataIDP = require("./models/UserData.js");
 const mongoose = require("mongoose");
 const setverless = require("serverless-http");
 mongoose.set("strictQuery", false);
-
+const session = require("express-session");
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
 const app = express();
+
+
+
 
 const HomeRoute = require("./routes/HomeRoute.js");
 const UserRoute = require("./routes/userRoute.js");
@@ -20,6 +25,17 @@ app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
+
+
+app.use(session({
+  secret : process.env.SESSION_SECRET,
+  resave:false,
+  saveUninitialized:false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 mongoose.connect(process.env.DBPORT, function (err) {
   if (err) {
