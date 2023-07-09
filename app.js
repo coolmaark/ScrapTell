@@ -8,6 +8,7 @@ const { allowedNodeEnvironmentFlags } = require("process");
 const methodOverride = require("method-override");
 const UserDataIDP = require("./models/UserData.js");
 const mongoose = require("mongoose");
+const setverless = require("serverless-http");
 mongoose.set("strictQuery", false);
 
 const app = express();
@@ -33,5 +34,5 @@ app.use("/User", UserRoute);
 app.use("/api", Auth);
 
 app.listen(process.env.PORT, function () {
-  console.log("Server started on http://localhost:" + process.env.PORT);
+  console.log("Server started on " + process.env.BASE_URL);
 });

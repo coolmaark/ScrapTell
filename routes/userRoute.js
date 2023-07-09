@@ -6,23 +6,23 @@ var jwt = require("jsonwebtoken");
 // const fetch = require('node-fetch');
 // const {axios } = require('axios');
 const { body, validationResult } = require("express-validator");
-const nodemailer = require('nodemailer')
+const nodemailer = require("nodemailer");
 const route = express.Router();
 const axios = require("axios");
 // const { error } = require("console");
-
+require("dotenv").config();
 const errors = [];
 
 const login = async (email, password) => {
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/Authenticate",
+      process.env.BASE_URL+"/api/Authenticate",
       {
         email,
         password,
       }
     );
-      // console.log(response);
+    // console.log(response);
     if (response.status === 200) {
       const token = response.data.authtoken;
       return token;
@@ -74,8 +74,8 @@ route.post(
       if (!check) {
         return res.render("login", { errors: ["The Password is incorrect"] });
       }
-      if(user.Is_Verified == 0){
-        return res.render("login",{errors : ["The Email Is Not Verified"]});
+      if (user.Is_Verified == 0) {
+        return res.render("login", { errors: ["The Email Is Not Verified"] });
       }
       res.redirect("/");
     } catch (err) {
@@ -89,16 +89,15 @@ const signup = async (username, email, password) => {
   //   console.log(email);
   //   console.log(password);
   try {
-    
     const response = await axios.post(
-      "http://localhost:3000/api/createNewUser",
+      process.env.BASE_URL+"/api/createNewUser",
       {
         username,
         email,
         password,
       }
     );
-      // console.log(response);
+    // console.log(response);
     if (response.status === 200) {
       const token = response.data.authtoken;
       return token;
@@ -116,57 +115,54 @@ const signup = async (username, email, password) => {
   }
 };
 
-
 const hbs = require("nodemailer-express-handlebars");
 const path = require("path");
 
-const sendVerifyMail = async(username, email, userid)=>{
+const sendVerifyMail = async (username, email, userid) => {
   try {
     const Transporter = nodemailer.createTransport({
-      host : 'smtp.gmail.com',
+      host: "smtp.gmail.com",
       port: 587,
-      secure : false,
+      secure: false,
       requireTLS: true,
-      auth : {
-        user:'ravidp900@gmail.com',
-        pass:'bbzebrmuslqwllxe'
-      }
-    })
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.PASSWORD,
+      },
+    });
 
     const handlebarOptions = {
-      viewEngine : {
-        extName : ".html",
-        partiaLsDir : path.resolve('./views'),
-        defaultLayout : false,
+      viewEngine: {
+        extName: ".html",
+        partiaLsDir: path.resolve("./views"),
+        defaultLayout: false,
       },
-      viewPath : path.resolve('./views'),
-      extName : ".handlebars"
-    }
-    Transporter.use('compile', hbs(handlebarOptions));
+      viewPath: path.resolve("./views"),
+      extName: ".handlebars",
+    };
+    Transporter.use("compile", hbs(handlebarOptions));
     const mailOptions = {
-      from : 'ravidp900@gmail.com',
+      from: process.env.EMAIL,
       to: email,
-      subject:'For verification To create your account in scraptel',
-      template : 'VerifyEmail',
-      context : {
-        user_id : userid
-      }
-    }
-    
-    Transporter.sendMail(mailOptions,function(err,info){
-      if(err){
-        console.log(err);
-      }
-      else{
-        console.log("Email has been sent:-", info.response)
-      }
-    })
+      subject: "For verification To create your account in scraptel",
+      template: "VerifyEmail",
+      context: {
+        user_id: userid,
+        BASE_URL: process.env.BASE_URL,
+      },
+    };
 
+    Transporter.sendMail(mailOptions, function (err, info) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Email has been sent:-", info.response);
+      }
+    });
   } catch (error) {
     console.log(error);
-
   }
-}
+};
 
 route.post(
   "/Signup",
@@ -199,25 +195,27 @@ route.post(
         errors: ["Enter a valid Email"],
       });
     }
-    const user = await User.findOne({email : email});
+    const user = await User.findOne({ email: email });
     sendVerifyMail(username, email, user.id);
     res.redirect("/Login");
   }
 );
 
-const VerifyMail = async(req,res)=>{
+const VerifyMail = async (req, res) => {
   try {
     // const user = await User.findOne({_id : req.query.id});
     // console.log(user);
-    const updated = await User.updateOne({_id: req.query.id}, { $set : {Is_Verified : 1 } });
+    const updated = await User.updateOne(
+      { _id: req.query.id },
+      { $set: { Is_Verified: 1 } }
+    );
     // console.log(updated);
-    res.render("login",{errors : ["Email Verified"]});  
-
+    res.render("login", { errors: ["Email Verified"] });
   } catch (error) {
     console.log(error);
   }
-}
+};
 
-route.get("/Verify",VerifyMail);
+route.get("/Verify", VerifyMail);
 
 module.exports = route;
