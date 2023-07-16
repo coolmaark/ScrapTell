@@ -127,7 +127,7 @@ function renderProducts() {
     products.forEach((product) => {
         const id = product.id;
         productElement.innerHTML += `
-            <div class="col-sm-6 col-md-4 col-lg-3 py-3">
+            <div class="col-sm-6 col-md-4 col-lg-3 py-3" id="gap-btw">
                 <div class="card produce">
                     <img src="${product.imgSrc}" alt="" class="product-img">
                     <div class="description">
