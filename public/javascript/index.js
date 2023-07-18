@@ -17,7 +17,7 @@ if (close) {
     });
 }
 function windowOpenMaps(){
-    window.open("https://goo.gl/maps/9bLLLCHm5iwstz297");
+    window.open("https://goo.gl/maps/nBU3n58etEb8wUtk8");
 }
 function windowOpenWA(){
     window.open("https://wa.me/+918142031786")
