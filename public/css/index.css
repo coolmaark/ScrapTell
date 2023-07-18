@@ -320,6 +320,14 @@ body {
     color: #E9F0DC;
     padding: 2% 0;
 }
+.whatsapp{
+    text-decoration: none;
+    color: #E9F0DC;
+    cursor: pointer;
+}
+.whatsapp:hover{
+    color: #E9F0DC;
+}
 
 /* Owl Cursosal */
 .row-tel .owl-carousel {
@@ -501,6 +509,16 @@ body {
     color: #fff;
 }
 .footer-mail:hover{
+    color: #fff;
+}
+.footer-map{
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    padding-left: 10px;
+    font-weight: 600;
+}
+.footer-map:hover{
     color: #fff;
 }
 /* Media Queries */

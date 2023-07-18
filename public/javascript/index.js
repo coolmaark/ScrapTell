@@ -19,6 +19,9 @@ if (close) {
 function windowOpenMaps(){
     window.open("https://goo.gl/maps/9bLLLCHm5iwstz297");
 }
+function windowOpenWA(){
+    window.open("https://wa.me/+918142031786")
+}
 // Cart
 
 const cartIcon = document.querySelector("#cart-icon");
