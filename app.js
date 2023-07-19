@@ -15,27 +15,25 @@ const passport = require("passport");
 const passportLocalMongoose = require("passport-local-mongoose");
 const app = express();
 
-
-
-
 const HomeRoute = require("./routes/HomeRoute.js");
 const UserRoute = require("./routes/userRoute.js");
 const Auth = require("./routes/auth.js");
+const About = require("./routes/About.js");
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(express.json());
 app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 
-
-app.use(session({
-  secret : process.env.SESSION_SECRET,
-  resave:false,
-  saveUninitialized:false
-}));
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 mongoose.connect(process.env.DBPORT, function (err) {
   if (err) {
@@ -48,6 +46,7 @@ mongoose.connect(process.env.DBPORT, function (err) {
 app.use("/", HomeRoute);
 app.use("/User", UserRoute);
 app.use("/api", Auth);
+app.use("/Queries",About);
 
 app.listen(process.env.PORT, function () {
   console.log("Server started on " + process.env.BASE_URL);
