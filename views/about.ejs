@@ -1,5 +1,4 @@
 <%- include("partials/header");-%>
-
 <body>
     <!-- Navbar -->
     <section id="header">
@@ -13,44 +12,8 @@
                 <li><a class="active" href="/About">About</a></li>
                 <li><a href="/Sell">Sell</a></li>
                 <li><a href="/Login">Login</a></li>
-                <li id="lg-bag"><a href="#"><i class="bi bi-bag-fill" id="cart-icon"></i></a></li>
-                <div class="total-items-in-cart">0</div>
-                <div class="cart">
-                    <h2 class="cart-title">Your Cart</h2>
-                    <div class="deliver">
-                        <div class="we-deliver">
-                            <div class="we-deliver-radio">
-                                <input type="radio" id="want-transport" name="Transport" value="Yes">
-                                <label for="want-transport">Want Transportation Service</label>
-                            </div>
-                            <div class="hidden-location1">
-                                
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="user-deliver">
-                            <input type="radio" id="no-transport" name="Transport" value="No">
-                            <label for="no-transport">Don't Want Transportation Service</label>
-                        </div>
-                    </div>
-                    <div class="cart-content">
-                        
-                    </div>
-                    
-                    <div class="total">
-                        <div class="total-title">Total</div>
-                        <div class="total-price">Rs.0</div>
-                    </div>
-                    <button type="button" class="btn-buy">Sell Now</button>
-                    <i class="bi bi-x-lg" id="cart-close"></i>
-                </div>
-                <a href="#" id="close"><i class="bi bi-x-lg"></i></a>
-            </ul>
-        </div>
-        <div id="mobile">
-            <a href="#"><i class="bi bi-bag-fill" id="mobile-cart-icon"></i></a>
-            <i id="bar" class="fas fa-outdent"></i>
-        </div>
+                <li id="lg-bag"><a><i class="bi bi-bag-fill" id="cart-icon"></i></a></li>
+                <%- include("partials/middle");-%>
     </section>
     <!-- About Us -->
     <section id="about-us">
@@ -71,8 +34,7 @@
                     <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam consectetur ad eligendi
                         molestias
                         adipisci illum.</h2>
-                </div>
-                
+                    </div>      
                 <div class="our-story-img-quote">
                     <img src="  /images/icons/quote.png" alt="">
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus asperiores quas labore temporibus
@@ -80,39 +42,19 @@
                     </p>
                 </div>
             </div>
-            <div class="our-story-pnt">
-                <ol type="1">
-                    <li>
-                        <h3> commodi itaque et! Tenetur.</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A at nobis neque facere, iste nam
-                            nesciunt velit ex consequatur explicabo et labore vel saepe est adipisci, praesentium
-                            repudiandae eum ipsam qui ducimus illum iure deserunt. Neque necessitatibus sint autem
-                            consectetur  </p>
-                    </li>
-                    <li>
-                        <h3> commodi itaque et! Tenetur.</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A at nobis neque facere, iste nam
-                            nesciunt velit ex consequatur explicabo et labore vel saepe est adipisci, praesentium
-                            repudiandae eum ipsam qui ducimus illum iure deserunt. Neque necessitatibus sint autem
-                            consectetur  </p>
-                    </li>
-                    <li>
-                        <h3> commodi itaque et! Tenetur.</h3>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. A at nobis neque facere, iste nam
-                            nesciunt velit ex consequatur explicabo et labore vel saepe est adipisci, praesentium
-                            repudiandae eum ipsam qui ducimus illum iure deserunt. Neque necessitatibus sint autem
-                            consectetur  </p>
-                    </li>
-                </ol>
+            <div class="our-story-pnt">  
+                <ol type=1 class="ptn">
+
+                </ol>   
             </div>
         </div>
         </div>
     </section>
-
     <%- include("partials/footer"); -%>
-
+    <script src="/javascript/category.js"></script>
+    <script src="  /javascript/about.js"></script> 
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="  /javascript/index.js"></script>
-    <script src="  /javascript/sell.js"></script>
+    <script src="  /javascript/sell.js"></script> 
 </body>
 </html>

@@ -305,23 +305,89 @@ const categories = {
     ],  
 };
 
-// for (let copper of categories.coppers) {
-//     const categoryElement = document.querySelector(".category-grp");
-//     function renderCategory() {
-//             // console.log(category.imgSrc);
-//             categoryElement.innerHTML += `
-//                 <div class="col-md-6 col-lg-3 py-3">
-//                 <div class="card why-scraptel-card">
-//                     <img src="${copper.imgSrc}" class="why-scraptel-icon" alt="...">
-//                     <div class="card-body read-more-container">
-//                         <h4 class="card-title">${copper.name}</h4>
-//                         <h3 class="card-price">${copper.price}</h3>
+const whyScraptel=[
+    {
+        id: "1",
+        name : "Weight Accuracy",
+        imgSrc :"/images/icons/balance.png",
+        matter :"Our weighing instruments undergo regular calibration and verification processes to maintain their accuracy and reliability.",
+        hiddenMatter :"Our commitment to weight accuracy extends to providing consistent and reliable measurements.",
+    },
+    {
+        id: "2",
+        name : "Efficient Communication",
+        imgSrc :"/images/icons/conversation.png",
+        matter :"We prioritize clear and timely communication with our clients. Our Communication will be at trained level. Our commitment ",
+        hiddenMatter :"to open communication ensures that our clients feel valued and engaged throughout the collaboration.",
+    },
+    {
+        id: "3",
+        name : "Long-term Vision",
+        imgSrc :"/images/icons/telescope.png",
+        matter :"Our services are designed with a long-term perspective in mind. We strive to contribute to our clients' sustained growth and ",
+        hiddenMatter :"success, fostering a partnership that extends beyond immediate projects to create a lasting impact.",
+    },
+    {
+        id: "4",
+        name : "Customer Support",
+        imgSrc :"/images/icons/customer-service.png",
+        matter :"Our dedicated customer support team is always ready to assist clients with any concerns or issues they may have. We are co",
+        hiddenMatter :"mitted to providing prompt and helpful support, ensuring a seamless experience and complete satisfaction.",
+    },
+    {
+        id: "5",
+        name : "Continuous Improvement",
+        imgSrc :"/images/icons/growth.png",
+        matter :"We constantly seek opportunities for improvement to enhance the value we provide to our clients. Through ongoing evaluation, fe",
+        hiddenMatter :"edback, and adaptation, we ensure that our services remain relevant and effective in an ever-evolving business landscape.",
+    },
+    {
+        id: "6",
+        name : "Tailored Solutions",
+        imgSrc :"/images/icons/bulb.png",
+        matter :"We understand that each client is unique, and we strive to provide customized services that align with their specific needs an ",
+        hiddenMatter :" goals. Our team works closely with clients to develop tailored solutions that address their business challenges effectively.",
+    },
 
-//                     </div>
-//                 </div>
+]
 
-//                 </div>
-//             `
-//     }
-//     renderCategory();
-// }
+const howSimpleIsIt = [
+    {
+        id: "1",
+        name: "Step-1",
+        imgSrc :"/images/icons/link.png",
+        matter:"Connect with Us Effortlessly.",
+    },
+    {
+        id: "2",
+        name: "Step-2",
+        imgSrc :"/images/icons/deal.png",
+        matter:"Making the Perfect Deal Simplified.",
+    },
+    {
+        id: "3",
+        name: "Step-3",
+        imgSrc :"/images/icons/truck.png",
+        matter:"Sell Your Scrap with Ease.",
+    },
+
+]
+
+const abouts = [
+    {
+        id: "1",
+        name: "commodi itaque et! Tenetur.",
+        matter:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. A at nobis neque facere, iste namnesciunt velit ex consequatur explicabo et labore vel saepe est adipisci, praesentium repudiandae eum ipsam qui ducimus illum iure deserunt. Neque necessitatibus sint autem consectetur ",
+    },
+    {
+        id: "2",
+        name: "commodi itaque et! Tenetur.",
+        matter:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. A at nobis neque facere, iste namnesciunt velit ex consequatur explicabo et labore vel saepe est adipisci, praesentium repudiandae eum ipsam qui ducimus illum iure deserunt. Neque necessitatibus sint autem consectetur ",
+    },
+    {
+        id: "3",
+        name: "commodi itaque et! Tenetur.",
+        matter:"Lorem ipsum dolor, sit amet consectetur adipisicing elit. A at nobis neque facere, iste namnesciunt velit ex consequatur explicabo et labore vel saepe est adipisci, praesentium repudiandae eum ipsam qui ducimus illum iure deserunt. Neque necessitatibus sint autem consectetur ",
+    },
+
+]

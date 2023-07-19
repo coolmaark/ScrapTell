@@ -1,7 +1,9 @@
 
 const bar = document.getElementById('bar');
 const nav = document.getElementById('navbar');
-
+const parentContainer = document.querySelector('.read-more-container');
+const howItWorks = document.querySelector('.how-simple-is-it');
+const ourStoryDes= document.querySelector('.our-story-des');
 if (bar) {
     bar.addEventListener('click', function () {
         nav.classList.add("active");
@@ -14,7 +16,12 @@ if (close) {
         nav.classList.remove("active");
     });
 }
-
+function windowOpenMaps(){
+    window.open("https://goo.gl/maps/nBU3n58etEb8wUtk8");
+}
+function windowOpenWA(){
+    window.open("https://wa.me/+918142031786")
+}
 // Cart
 
 const cartIcon = document.querySelector("#cart-icon");
@@ -105,7 +112,7 @@ function knowLocation() {
 }
 
 
-const parentContainer = document.querySelector('.read-more-container');
+
 parentContainer.addEventListener("click", event => {
     const current = event.target;
     const isReadMoreBtn = current.className.includes('read-more-btn');
@@ -116,5 +123,73 @@ parentContainer.addEventListener("click", event => {
     current.textContent = current.textContent.includes('Read More') ?
         "Read Less" : "Read More...";
 });
+    function readMore(){
+        whyScraptel.forEach((wst) => {
+            const id = wst.id;
+            parentContainer.innerHTML += `
+            <div class="col-md-6 col-lg-4 py-3 ">
+                    <div class="card why-scraptel-card">
+                        <img src="${wst.imgSrc}" class="why-scraptel-icon" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title">${wst.name}</h4>
+                            <p class="card-text">${wst.matter}<span class="read-more-text">${wst.hiddenMatter}</span></p>
+                            <span class="read-more-btn">Read More...</span>
+                        </div>
+                    </div>
+                </div>
+            `
+        });
+    }
+    readMore();
+    function howSimple(){
+        howSimpleIsIt.forEach((howSimpleIs) => {
+            const id = howSimpleIs.id;
+            howItWorks.innerHTML += `
+                <div class="col-sm-12 col-md-4 py-3">
+                    <div class="card why-scraptel-card">
+                        <div class="card-body">
+                            <h4 class="card-title">${howSimpleIs.name}</h4>
+                            <img src="${howSimpleIs.imgSrc}" width="100%" class="how-simple-is-it-icon" alt="...">
+                            <p class="card-text">${howSimpleIs.matter}</p>
+                        </div>
+                    </div>
+            </div>
+            `
+        });
+    }
+    howSimple();
 
+function ourStory(){
+    ourStoryDes.innerHTML +=`
+    <p>At <b>SCRAPTEL </b>, our passion for sustainability led us to become scrap buyers with a
+        purpose.
+        With utmost
+        politeness and professionalism, we set out on a journey to transform scrap into valuable
+        resources.
+    </p>
 
+<p> Driven by our commitment to environmental stewardship, we saw an opportunity to make a
+    difference.
+    By
+    removing wastage and unlocking the hidden potential of scrap, we create sustainable
+    solutions
+    that
+    benefit
+    both our partners and the planet.</p>
+
+<p class="our-story-p"> Through transparent and respectful relationships, we have built a reputation for
+    trust and
+    reliability. Our
+    team's expertise and innovative mindset enable us to optimize resources and minimize
+    environmental
+    impact,
+    shaping a greener future. </p>
+
+<p class="our-story-p"> Join us in our story as we continue to reshape sustainability through the power
+    of scrap.
+    Together,
+    we can
+    create a brighter and more sustainable world, one scrap at a time.</p>
+    `
+}
+ourStory();

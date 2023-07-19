@@ -230,7 +230,7 @@ body {
     margin-right: 5%;
 }
 
-#header a {
+#header a,.footer-call {
     text-decoration: none;
     color: #000;
     font-weight: 600;
@@ -320,6 +320,14 @@ body {
     color: #E9F0DC;
     padding: 2% 0;
 }
+.whatsapp{
+    text-decoration: none;
+    color: #E9F0DC;
+    cursor: pointer;
+}
+.whatsapp:hover{
+    color: #E9F0DC;
+}
 
 /* Owl Cursosal */
 .row-tel .owl-carousel {
@@ -403,6 +411,7 @@ body {
 }
 
 .read-more-btn{
+    cursor: pointer;
     color: #0984e3;
 }
 
@@ -448,7 +457,9 @@ body {
 .bi {
     font-size: 20px;
 }
-
+.d-flex{
+    display: contents;
+}
 .d-flex p {
     font-size: 18px;
     padding-left: 18px;
@@ -465,7 +476,9 @@ body {
 }
 
 /* Footer */
-
+.g-map{
+    display: contents;
+}
 #footer {
     background: #154972;
     color: #fff;
@@ -482,7 +495,32 @@ body {
     cursor: pointer;
 }
 
-
+.footer-call{
+    padding-left: 10px;
+    color: #fff;
+}
+.footer-mail{
+    text-decoration: none;
+    color: #fff;
+    padding-left: 10px;
+    font-weight: 600;
+}
+.footer-call:hover{
+    color: #fff;
+}
+.footer-mail:hover{
+    color: #fff;
+}
+.footer-map{
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    padding-left: 10px;
+    font-weight: 600;
+}
+.footer-map:hover{
+    color: #fff;
+}
 /* Media Queries */
 
 @media(max-width: 799px) {

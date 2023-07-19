@@ -85,23 +85,24 @@ function handle_changeItemQuantity() {
 
 // Update & Render
 function updateTotal() {
-    let totalItemsInCartEl = document.querySelector(".total-items-in-cart");
+    // let totalItemsInCartEl = document.querySelector(".total-items-in-cart");
     let cartBoxes = document.querySelectorAll(".cart-box");
     const totalElement = cart.querySelector(".total-price");
-    let total = 0, totalItems = 0;
+    let total = 0;
+    // let totalItems=0;
     cartBoxes.forEach((cartBoxes) => {
         let priceElement = cartBoxes.querySelector(".cart-price");
         let price = parseFloat(priceElement.innerHTML.replace("Rs.", ""));
         let quantity = cartBoxes.querySelector(".cart-quantity").value;
         total += price * quantity;
-        totalItems +=1;
+        // totalItems +=1;
     });
     
     // 2 decimal points
     total = total.toFixed(2);
 
     totalElement.innerHTML = "Rs." + total;
-    totalItemsInCartEl.innerHTML = totalItems;
+    // totalItemsInCartEl.innerHTML = totalItems;
 }
 
 // HTML Component
@@ -127,7 +128,7 @@ function renderProducts() {
     products.forEach((product) => {
         const id = product.id;
         productElement.innerHTML += `
-            <div class="col-sm-6 col-md-4 col-lg-3 py-3">
+            <div class="col-sm-6 col-md-4 col-lg-3 py-3" id="gap-btw">
                 <div class="card produce">
                     <img src="${product.imgSrc}" alt="" class="product-img">
                     <div class="description">
