@@ -9,10 +9,10 @@ const Schema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  text : {
-    type: String
+  text: {
+    type: String,
   }
 });
-const User = mongoose.model("User", Schema);
-User.createIndexes();
-module.exports = User;
+const Query = mongoose.model("Query", Schema);
+Query.createIndexes();
+module.exports = Query;

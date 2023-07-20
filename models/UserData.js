@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const passportLocalMongoose = require("passport-local-mongoose");
-const passport = require("passport");
 mongoose.set("strictQuery", false);
 const Schema = new mongoose.Schema({
   username: {
@@ -21,10 +19,6 @@ const Schema = new mongoose.Schema({
     required : true,
   },
 });
-Schema.plugin(passportLocalMongoose);
 const User = mongoose.model("User", Schema);
 User.createIndexes();
-passport.use(User.createStrategy());
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
 module.exports = User;
