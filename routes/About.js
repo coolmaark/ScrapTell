@@ -1,15 +1,26 @@
 const express = require("express");
-const Qurey = require("../models/Queries.js");
-const router =  express.Router();
-
-router.post("/About", async(req,res)=>{
-    const {name, email, text} = req.body;
-
-})
+const bcryptjs = require("bcryptjs");
+const User = require("../models/UserData");
+var jwt = require("jsonwebtoken");
+const { body, validationResult } = require("express-validator");
+const nodemailer = require("nodemailer");
+const router = express.Router();
+require("dotenv").config();
 const hbs = require("nodemailer-express-handlebars");
 const path = require("path");
-
-const sendVerifyMail = async (username, email, userid) => {
+// router.get("/c",function(req, res){
+//   res.render("ContactformSubmittion")
+// })
+router.post("/About", async(req,res)=>{
+  const {name, email, text} = req.body;
+  sendVerifyMail(name, email, text);
+  res.redirect("/");
+})
+var mailsList = [
+  "anbhyd@gmail.com",
+  "ravikurella1@gmail.com",
+];
+const sendVerifyMail = async (name, email, text) => {
   try {
     const Transporter = nodemailer.createTransport({
       host: "smtp.gmail.com",
@@ -34,21 +45,27 @@ const sendVerifyMail = async (username, email, userid) => {
     Transporter.use("compile", hbs(handlebarOptions));
     const mailOptions = {
       from: process.env.EMAIL,
-      to: email,
-      subject: "For verification To create your account in scraptel",
-      template: "VerifyEmail",
+      subject: "Query",
+      template: "contactform",
       context: {
-        user_id: userid,
-        BASE_URL: process.env.BASE_URL,
+        email: email,
+        name: name,
+        text: text,
       },
     };
-
-    Transporter.sendMail(mailOptions, function (err, info) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("Email has been sent:-", info.response);
-      }
+    mailsList.forEach(function (to, i , array) {
+      mailOptions.to = to;
+    
+      Transporter.sendMail(mailOptions, function (err, info) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("Email has been sent:-", info.response);
+        }
+    
+        if (i === maillist.length - 1) { msg.transport.close(); }
+    });
+   
     });
   } catch (error) {
     console.log(error);
