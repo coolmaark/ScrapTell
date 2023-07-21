@@ -128,13 +128,13 @@ function renderProducts() {
     products.forEach((product) => {
         const id = product.id;
         productElement.innerHTML += `
-            <div class="col-sm-6 col-md-4 col-lg-3 py-3" id="gap-btw">
-                <div class="card produce">
-                    <img src="${product.imgSrc}" alt="" class="product-img">
-                    <div class="description">
+            <div class="col-lg-3 col-md-4 col-sm-6 py-3" style="display:flex; justify-content:center;align-items:center;">
+                <div class="card cat-items">
+                    <img src="${product.imgSrc}" alt="${product.name}" class="product-img">
+                    <div class="cart-body">
                         <h3 class="product-title">${product.name}</h3>
                     </div>
-                    <button class="open-cat" onclick="openCategory('${product.id}')">Categories</button>
+                    <button class="basket" onclick="openCategory('${product.id}')">Categories</button>
                 </div>
             </div>
         `
@@ -156,7 +156,7 @@ function openCategory(id) {
     for (let item of categories[id]) {
         function renderCategory() {
                 categoryElement.innerHTML += `
-                    <div class="col-lg-3 col-md-4 col-sm-6 py-3 ">
+                    <div class="col-lg-3 col-md-4 col-sm-6 py-3 "style="display:flex; justify-content:center;align-items:center;">
                         <div class="card cat-items">
                             <img src="${item.imgSrc}" alt="${item.name}" class="product-img">
                             <div class="card-body">
